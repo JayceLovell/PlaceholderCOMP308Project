@@ -1,0 +1,12 @@
+{
+  "name": "placeholder-comp308-project",
+  "version": "0.0.0",
+  "description": "PlaceholderCOMP308Project",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14"
+  }
+}
