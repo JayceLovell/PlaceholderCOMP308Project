@@ -1,4 +1,4 @@
-// Load the module dependencies
+﻿// Load the module dependencies
 const config = require('./config');
 const mongoose = require('mongoose');
 
@@ -9,7 +9,7 @@ module.exports = function () {
 
     // Load the 'User' model 
     require('../app/models/user.server.model');
-    // Load the 'PatientData' model 
+    // Load the 'Patient' model 
     require('../app/models/patientData.server.model');
 
     // Return the Mongoose connection instance

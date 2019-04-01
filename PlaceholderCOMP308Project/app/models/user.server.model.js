@@ -23,7 +23,7 @@ const UserSchema = new Schema({
     },
     isPatient: {
         type: Boolean,
-        default: true;
+        required: 'Are you a Patient?'
     },
     salt: {
         type: String

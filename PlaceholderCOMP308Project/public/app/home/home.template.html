@@ -1,12 +1,16 @@
 <div *ngIf="user">
     <h1>Hello {{user.fullName}}</h1>
-    <a href="/api/auth/signout">Signout</a>
-    <ul>
-        <li><a [routerLink]="['/']">Place Holder</a></li>
-        <li><a [routerLink]="['/']">Place Holder</a></li>
-    </ul>
+    <div class="btn-group-vertical">
+        <a class="btn btn-dark" href="/api/auth/signout">Signout</a>
+        <div *ngIf="user.isPatient">
+            <a class="btn btn-dark" [routerLink]="['/']">Place Holder Patient</a>
+        </div>
+        <div *ngIf="!user.isPatient">
+            <a class="btn btn-dark" [routerLink]="['/']">Place Holder Nurse</a>
+        </div>
+    </div>
 </div>
 <div *ngIf="!user">
-    <a [routerLink]="['/authentication/signup']">Signup</a>
-    <a [routerLink]="['/authentication/signin']">Signin</a>
+    <a class="btn btn-light" [routerLink]="['/authentication/signup']">Signup</a>
+    <a class="btn btn-dark" [routerLink]="['/authentication/signin']">Signin</a>
 </div>

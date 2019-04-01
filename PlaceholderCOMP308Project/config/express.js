@@ -1,4 +1,4 @@
-// Load the module dependencies
+﻿// Load the module dependencies
 const config = require('./config');
 const path = require('path');
 const express = require('express');
@@ -53,8 +53,9 @@ module.exports = function () {
 
     // Load the routing files	
     require('../app/routes/users.server.routes.js')(app);
-    require('../app/routes/patients.server.routes.js')(app);
-    require('../app/routes/nurses.server.routes.js')(app);
+    //require('../app/routes/patients.server.routes.js')(app);
+    //require('../app/routes/nurses.server.routes.js')(app);
+    require('../app/routes/index.server.routes.js')(app);
 
     // Return the Express application instance
     return app;

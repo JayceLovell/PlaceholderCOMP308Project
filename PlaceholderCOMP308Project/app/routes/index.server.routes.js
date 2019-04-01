@@ -1,4 +1,4 @@
-// Load the 'index' controller
+﻿// Load the 'index' controller
 const index = require('../controllers/index.server.controller');
 
 // Define the routes module' method

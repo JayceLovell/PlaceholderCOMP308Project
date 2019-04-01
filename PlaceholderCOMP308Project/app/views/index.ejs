@@ -8,11 +8,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <mean-app>
-        <h1>Loading.....Project</h1>
-    </mean-app>
+    <div class="jumbotron">
+        <h1>Emergin Tech Project</h1>
+        <p>
+            by Jayce Lovell-300833478 (rest of you put your info here)
+        </p>
+    </div>
+    <div class="row" align="center">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" align="center">
+            <mean-app>
+                <h1>Loading.....Project</h1>
+            </mean-app>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
     <script type="text/javascript">
-        winder.user = <%= user || 'null' %>;
+        window.user = <%= user || 'null' %>;
     </script>
 
     <script src="lib/core-js/client/shim.min.js"></script>

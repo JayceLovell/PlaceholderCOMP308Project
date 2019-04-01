@@ -1,6 +1,8 @@
+﻿// Load the module dependencies
 const User = require('mongoose').model('User');
 const passport = require('passport');
 
+// Create a new error handling controller method
 const getErrorMessage = function (err) {
     // Define the error message variable
     let message = '';
@@ -28,14 +30,17 @@ const getErrorMessage = function (err) {
     return message;
 };
 
+// Create a new controller method that signin users
 exports.signin = function (req, res, next) {
     passport.authenticate('local', (err, user, info) => {
         if (err || !user) {
             res.status(400).send(info);
         } else {
+            // Remove sensitive data before login
             user.password = undefined;
             user.salt = undefined;
 
+            // Use the Passport 'login' method to login
             req.login(user, (err) => {
                 if (err) {
                     res.status(400).send(err);
@@ -47,19 +52,23 @@ exports.signin = function (req, res, next) {
     })(req, res, next);
 };
 
+// Create a new controller method that creates new 'regular' users
 exports.signup = function (req, res) {
     const user = new User(req.body);
     user.provider = 'local';
 
+    // Try saving the User
     user.save((err) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         } else {
+            // Remove sensitive data before login
             user.password = undefined;
             user.salt = undefined;
 
+            // Login the user
             req.login(user, function (err) {
                 if (err) {
                     res.status(400).send(err);
@@ -70,6 +79,8 @@ exports.signup = function (req, res) {
         }
     });
 }
+
+// Create a new controller method that creates new 'OAuth' users
 exports.saveOAuthUserProfile = function (req, profile, done) {
     // Try finding a user document that was registered using the current OAuth provider
     User.findOne({
@@ -125,3 +136,5 @@ exports.requiresLogin = function (req, res, next) {
     }
     next();
 };
+//
+

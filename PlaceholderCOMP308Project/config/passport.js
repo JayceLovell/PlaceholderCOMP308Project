@@ -1,4 +1,4 @@
-// Load the module dependencies
+﻿// Load the module dependencies
 const passport = require('passport');
 const mongoose = require('mongoose');
 
