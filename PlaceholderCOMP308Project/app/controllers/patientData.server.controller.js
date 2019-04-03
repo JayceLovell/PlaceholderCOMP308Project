@@ -53,3 +53,14 @@ exports.update = function (req, res) {
         }
     });
 };
+exports.list = function (req, res) {
+    PatientData.find().sort('-created').populate('firstName lastName fullName').exec((err, patientData) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.status(200).json(patientData);
+        }
+    });
+};

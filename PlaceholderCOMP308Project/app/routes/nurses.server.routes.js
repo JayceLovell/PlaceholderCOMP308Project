@@ -7,6 +7,7 @@ module.exports = function (app) {
         .post(users.requiresLogin, patientData.create);
     app.route('/api/patientData/:patientDataId')
         .get(patientData.read)
-        .put(users.requiresLogin, patientData.update);
+        .put(users.requiresLogin, patientData.update)
+        .post();
     app.param('patientDataId', patientData.patientDataByID);
 };
