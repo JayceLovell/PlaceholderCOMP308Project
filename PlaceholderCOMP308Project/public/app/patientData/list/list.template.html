@@ -1,0 +1,11 @@
+<h1>PatientData</h1>
+<ul>
+    <li *ngFor="let patient of patientData">
+        <a [routerLink]="['/patientData', patientData._id]">{{patientData.fullName}}</a>
+        <br>
+        <small>{{patientData.created}}</small>
+    </li>
+</ul>
+<div *ngIf="patientData && patientData.length === 0">
+    No patientData yet, why don't you 
+</div>

@@ -40,6 +40,9 @@
     <Content Include="public\app\authentication\signin\signin.template.html" />
     <Content Include="public\app\authentication\signup\signup.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patientData\edit\edit.template.html" />
+    <Content Include="public\app\patientData\list\list.template.html" />
+    <Content Include="public\app\patientData\view\view.template.html" />
     <Content Include="typings.json" />
     <Content Include="typings\globals\core-js\typings.json" />
     <Content Include="typings\globals\jasmine\typings.json" />
@@ -58,6 +61,13 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientData\edit\edit.component.ts" />
+    <TypeScriptCompile Include="public\app\patientData\list\list.component.ts" />
+    <TypeScriptCompile Include="public\app\patientData\patientData.components.ts" />
+    <TypeScriptCompile Include="public\app\patientData\patientData.module.ts" />
+    <TypeScriptCompile Include="public\app\patientData\patientData.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientData\patientData.service.ts" />
+    <TypeScriptCompile Include="public\app\patientData\view\view.component.ts" />
     <TypeScriptCompile Include="server.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
@@ -83,6 +93,10 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\patientData\" />
+    <Folder Include="public\app\patientData\list\" />
+    <Folder Include="public\app\patientData\edit\" />
+    <Folder Include="public\app\patientData\view\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -92,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\controllers\index.server.controller.js" />
+    <Compile Include="app\controllers\patientData.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\users.server.controller.js" />
     <Compile Include="app\models\patientData.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
