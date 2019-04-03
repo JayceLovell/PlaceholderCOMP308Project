@@ -1,0 +1,16 @@
+﻿<section *ngIf="patientInfo && patientInfo.creator">
+    <h1>{{patientInfo.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/patientInfos', patientInfo._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{patientInfo.created}} by {{
+patientInfo.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{patientInfo.content}}</p>
+</section>

@@ -6,6 +6,7 @@
     <Name>PlaceholderCOMP308Project</Name>
     <RootNamespace>PlaceholderCOMP308Project</RootNamespace>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <ToolsVersionPromptShown>3.1</ToolsVersionPromptShown>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -40,6 +41,21 @@
     <Content Include="public\app\authentication\signin\signin.template.html" />
     <Content Include="public\app\authentication\signup\signup.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patientInfo\create\create.template.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\patientInfo\edit\edit.template.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\patientInfo\list\list.template.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\patientInfo\patientInfo.module.ts">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\patientInfo\view\view.template.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="typings.json" />
     <Content Include="typings\globals\core-js\typings.json" />
     <Content Include="typings\globals\jasmine\typings.json" />
@@ -58,6 +74,27 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientInfo\create\create.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\edit\edit.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\list\list.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\patientInfo.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\patientInfo.routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\patientInfo.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\patientInfo\view\view.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="server.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
@@ -83,6 +120,11 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\patientInfo\" />
+    <Folder Include="public\app\patientInfo\create\" />
+    <Folder Include="public\app\patientInfo\edit\" />
+    <Folder Include="public\app\patientInfo\list\" />
+    <Folder Include="public\app\patientInfo\view\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -92,8 +134,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\controllers\index.server.controller.js" />
+    <Compile Include="app\controllers\patientInfo.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\users.server.controller.js" />
     <Compile Include="app\models\patientData.server.model.js" />
+    <Compile Include="app\models\patientInfo.server.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\routes\index.server.routes.js" />
     <Compile Include="app\routes\nurses.server.routes.js" />

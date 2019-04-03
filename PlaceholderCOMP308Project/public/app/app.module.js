@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "@angular/router", "@angular/http", "./app.component", "./app.routes", "./home/home.module", "./authentication/authentication.service", "./authentication/authentication.module"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "@angular/router", "@angular/http", "./app.component", "./app.routes", "./home/home.module", "./authentication/authentication.service", "./authentication/authentication.module", "./patientInfo/patientInfo.service", "./patientInfo/patientInfo.module"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6,7 +6,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var core_1, platform_browser_1, router_1, http_1, app_component_1, app_routes_1, home_module_1, authentication_service_1, authentication_module_1, AppModule;
+    var core_1, platform_browser_1, router_1, http_1, app_component_1, app_routes_1, home_module_1, authentication_service_1, authentication_module_1, patientInfo_service_1, patientInfo_module_1, AppModule;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -36,6 +36,12 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
             },
             function (authentication_module_1_1) {
                 authentication_module_1 = authentication_module_1_1;
+            },
+            function (patientInfo_service_1_1) {
+                patientInfo_service_1 = patientInfo_service_1_1;
+            },
+            function (patientInfo_module_1_1) {
+                patientInfo_module_1 = patientInfo_module_1_1;
             }
         ],
         execute: function () {
@@ -50,12 +56,14 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
                             authentication_module_1.AuthenticationModule,
                             home_module_1.HomeModule,
                             router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
+                            patientInfo_module_1.PatientInfoModule,
                         ],
                         declarations: [
                             app_component_1.AppComponent
                         ],
                         providers: [
-                            authentication_service_1.AuthenticationService
+                            authentication_service_1.AuthenticationService,
+                            patientInfo_service_1.PatientInfosService
                         ],
                         bootstrap: [app_component_1.AppComponent]
                     })

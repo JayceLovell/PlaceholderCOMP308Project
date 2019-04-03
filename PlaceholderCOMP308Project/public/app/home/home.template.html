@@ -3,7 +3,7 @@
     <div class="btn-group-vertical">
         <a class="btn btn-dark" href="/api/auth/signout">Signout</a>
         <div *ngIf="user.isPatient">
-            <a class="btn btn-dark" [routerLink]="['/']">Place Holder Patient</a>
+            <a class="btn btn-dark" [routerLink]="['/patientIinfo']">Place Holder Patient</a>
         </div>
         <div *ngIf="!user.isPatient">
             <a class="btn btn-dark" [routerLink]="['/']">Place Holder Nurse</a>

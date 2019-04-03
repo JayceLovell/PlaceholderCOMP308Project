@@ -7,6 +7,8 @@ import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { PatientInfosService } from './patientInfo/patientInfo.service';
+import { PatientInfoModule } from './patientInfo/patientInfo.module';
 @NgModule({
     imports: [
         BrowserModule,
@@ -14,12 +16,14 @@ import { AuthenticationModule } from './authentication/authentication.module';
         AuthenticationModule,
         HomeModule,
         RouterModule.forRoot(AppRoutes),
+        PatientInfoModule,
     ],
     declarations: [
         AppComponent
     ],
     providers: [
-        AuthenticationService
+        AuthenticationService,
+        PatientInfosService
     ],
     bootstrap: [AppComponent]
 })
