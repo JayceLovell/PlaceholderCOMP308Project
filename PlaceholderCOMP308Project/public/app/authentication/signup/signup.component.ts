@@ -11,8 +11,6 @@ export class SignupComponent {
     constructor(private _authenticationService: AuthenticationService,
         private _router: Router) { }
     signup() {
-        this._authenticationService.signup(this.user)
-            .subscribe(result => this._router.navigate(['/']),
-            error => this.errorMessage = error);
+        this._authenticationService.signup(this.user).subscribe(result => this._router.navigate(['/']),error => this.errorMessage = error);
     }
 }

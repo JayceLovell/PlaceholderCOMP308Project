@@ -43,22 +43,18 @@ System.register(["rxjs/Rx", "@angular/core", "@angular/http", "rxjs/Observable"]
                         'Content-Type': 'application/json'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.post(this._signinURL, body, options)
-                        .map(function (res) { return _this.user = res.json(); })
-                        .catch(this.handleError);
+                    return this.http.post(this._signinURL, body, options).map(function (res) { return _this.user = res.json(); }).catch(this.handleError);
                 };
                 AuthenticationService.prototype.signup = function (user) {
                     var _this = this;
                     var body = JSON.stringify(user);
-                    console.log(body);
-                    console.log(JSON.stringify(body));
+                    //console.log(body);
+                    //console.log(JSON.stringify(body));
                     var headers = new http_1.Headers({
                         'Content-Type': 'application/json'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.post(this._signupURL, body, options)
-                        .map(function (res) { return _this.user = res.json(); })
-                        .catch(this.handleError);
+                    return this.http.post(this._signupURL, body, options).map(function (res) { return _this.user = res.json(); }).catch(this.handleError);
                 };
                 AuthenticationService.prototype.handleError = function (error) {
                     console.error(error);

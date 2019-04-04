@@ -34,9 +34,7 @@ System.register(["@angular/core", "@angular/router", "../authentication.service"
                 //first arrow function and any error with the second arrow function
                 SigninComponent.prototype.signin = function () {
                     var _this = this;
-                    this._authenticationService.signin(this.credentials).subscribe(function (result) {
-                        return _this._router.navigate(['/']);
-                    }, function (error) { return _this.errorMessage = error; });
+                    this._authenticationService.signin(this.credentials).subscribe(function (result) { return _this._router.navigate(['/']); }, function (error) { return _this.errorMessage = error; });
                 };
                 SigninComponent = __decorate([
                     core_1.Component({

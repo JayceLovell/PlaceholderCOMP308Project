@@ -13,15 +13,16 @@ function getErrorMessage(err) {
 };
 exports.create = function (req, res) {
     const patientData = new PatientData(req.body);
-    patientData.firstName = req.firstName;
-    patientData.lastName = req.lastName;
+    patientData.patientId = req.user;
+    patientData.patientUsername = req.body.username;
     patientData.save((err) => {
         if (err) {
+            console.log("got error in making patient Data");
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         } else {
-            res.status(200).json(patientData);
+            //res.status(200).json(patientData);
         }
     });
 };

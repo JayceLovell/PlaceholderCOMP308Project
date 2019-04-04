@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PatientDataSchema = new Schema({
-    userName: {
+    patientId: {
         type: Schema.ObjectId,
         ref: 'User'
+    },
+    patientUsername: {
+        type: String
     },
     bodyTemperature: {
         type: String
