@@ -49,6 +49,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                         .catch(this.handleError);
                 };
                 PatientsDataService.prototype.list = function () {
+                    console.log("making list");
                     return this._http
                         .get(this._baseURL)
                         .map(function (res) { return res.json(); })

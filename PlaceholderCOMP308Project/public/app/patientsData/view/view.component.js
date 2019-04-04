@@ -43,8 +43,8 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                         var patientDateId = params['patientDateId'];
                         _this._patientsDataService
                             .read(patientDateId)
-                            .subscribe(function (patientsData) {
-                            _this.patientData = patientsData;
+                            .subscribe(function (patientData) {
+                            _this.patientData = patientData;
                         }, function (error) { return _this._router.navigate(['/patientsData']); });
                     });
                 };

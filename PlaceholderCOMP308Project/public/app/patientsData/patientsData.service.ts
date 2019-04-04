@@ -15,16 +15,20 @@ export class PatientsDataService {
         return this._http
             .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
             .catch(this.handleError);
-    } delete(patientDataId: any): Observable<any> {
+    }
+    delete(patientDataId: any): Observable<any> {
         return this._http
             .delete(`${this._baseURL}/${patientDataId}`)
             .map((res: Response) => res.json())
             .catch(this.handleError);
     }
     list(): Observable<any> {
+        console.log("making list");
         return this._http
             .get(this._baseURL)
-            .map((res: Response) => res.json())
+            .map(
+            (res: Response) => res.json()
+            )
             .catch(this.handleError);
     }
     private handleError(error: Response) {

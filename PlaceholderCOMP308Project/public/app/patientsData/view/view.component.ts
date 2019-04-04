@@ -24,8 +24,8 @@ export class ViewComponent {
             this._patientsDataService
                 .read(patientDateId)
                 .subscribe(
-                    patientsData => {
-                        this.patientData = patientsData;
+                    patientData => {
+                        this.patientData = patientData;
                     },
                     error => this._router.navigate(['/patientsData'])
                 );

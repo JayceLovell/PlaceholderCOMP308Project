@@ -58,7 +58,8 @@ exports.update = function (req, res) {
     });
 };
 exports.list = function (req, res) {
-    PatientData.find().sort('-created').populate('userName','firstName lastName fullName').exec((err, patientsData) => {
+    console.log("called list in controller");
+    PatientData.find().sort('-created').populate('patientUsername','patientFirstname patientLastname fullName').exec((err, patientsData) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)

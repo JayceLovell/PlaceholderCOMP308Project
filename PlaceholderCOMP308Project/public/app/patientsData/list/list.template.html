@@ -1,9 +1,9 @@
 <h1>Patients Data</h1>
 <ul>
     <li *ngFor="let patient of patientsData">
-        <a [routerLink]="['/patientsData', patientData._id]">{{patientData.fullName}}</a>
+        <a [routerLink]="['/patientsData', patientData._id]">{{patientsData.fullName}}</a>
         <br>
-        <small>{{patientData.created}}</small>
+        <small>{{patientsData.created}}</small>
     </li>
 </ul>
 <div *ngIf="patientsData && patientsData.length === 0">
