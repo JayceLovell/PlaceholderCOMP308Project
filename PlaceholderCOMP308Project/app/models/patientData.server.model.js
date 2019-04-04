@@ -9,6 +9,12 @@ const PatientDataSchema = new Schema({
     patientUsername: {
         type: String
     },
+    patientFirstname: {
+        type: String
+    },
+    patientLastname: {
+        type: String
+    },
     bodyTemperature: {
         type: String
     },
@@ -26,5 +32,12 @@ const PatientDataSchema = new Schema({
         // Create a default 'created' value
         default: Date.now
     }
+});
+PatientDataSchema.virtual('fullName').get(function () {
+    return this.patientFirstname + ' ' + this.patientLastname;
+}).set(function (fullName) {
+    const splitName = fullName.split(' ');
+    this.patientFirstname = splitName[0] || '';
+    this.patientLastname = splitName[1] || '';
 });
 mongoose.model('PatientData', PatientDataSchema);
