@@ -1,4 +1,4 @@
-System.register(["@angular/core", "../patientData.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "../patientsData.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,33 +9,33 @@ System.register(["@angular/core", "../patientData.service"], function (exports_1
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, patientData_service_1, ListComponent;
+    var core_1, patientsData_service_1, ListComponent;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (patientData_service_1_1) {
-                patientData_service_1 = patientData_service_1_1;
+            function (patientsData_service_1_1) {
+                patientsData_service_1 = patientsData_service_1_1;
             }
         ],
         execute: function () {
             ListComponent = /** @class */ (function () {
-                function ListComponent(_patientDataService) {
-                    this._patientDataService = _patientDataService;
+                function ListComponent(_patientsDataService) {
+                    this._patientsDataService = _patientsDataService;
                 }
                 ListComponent.prototype.ngOnInit = function () {
-                    this._patientDataService.list().subscribe(this.patientData, this.patientData
-                        = this.patientData);
+                    var _this = this;
+                    this._patientsDataService.list().subscribe(function (patientsData) { return _this.patientsData
+                        = _this.patientsData; });
                 };
-                var _a;
                 ListComponent = __decorate([
                     core_1.Component({
                         selector: 'list',
-                        templateUrl: 'app/patientData/list/list.template.html'
+                        templateUrl: 'app/patientsData/list/list.template.html'
                     }),
-                    __metadata("design:paramtypes", [typeof (_a = typeof patientData_service_1.PatientDataService !== "undefined" && patientData_service_1.PatientDataService) === "function" ? _a : Object])
+                    __metadata("design:paramtypes", [patientsData_service_1.PatientsDataService])
                 ], ListComponent);
                 return ListComponent;
             }());

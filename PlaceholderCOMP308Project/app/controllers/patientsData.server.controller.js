@@ -26,7 +26,7 @@ exports.create = function (req, res) {
     });
 };
 exports.patientDataByID = function (req, res, next, id) {
-    PatientData.findById(id).populate('creator', 'firstName lastName fullName').exec((err, patientData) => {
+    PatientData.findById(id).populate('userName', 'firstName lastName fullName').exec((err, patientData) => {
         if (err) return next(err);
         if (!patientData) return next(new Error('Failed to load patientData '
             + id));
@@ -54,13 +54,13 @@ exports.update = function (req, res) {
     });
 };
 exports.list = function (req, res) {
-    PatientData.find().sort('-created').populate('firstName lastName fullName').exec((err, patientData) => {
+    PatientData.find().sort('-created').populate('userName','firstName lastName fullName').exec((err, patientsData) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         } else {
-            res.status(200).json(patientData);
+            res.status(200).json(patientsData);
         }
     });
 };

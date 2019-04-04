@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 @Injectable()
-export class patientDataService {
-    private _baseURL = 'api/patientData';
+export class PatientsDataService {
+    private _baseURL = 'api/patientsData';
     constructor(private _http: Http) { }
     read(patientDataId: string): Observable<any> {
         return this._http
@@ -14,6 +14,11 @@ export class patientDataService {
     } update(patientData: any): Observable<any> {
         return this._http
             .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
+            .catch(this.handleError);
+    } delete(patientDataId: any): Observable<any> {
+        return this._http
+            .delete(`${this._baseURL}/${patientDataId}`)
+            .map((res: Response) => res.json())
             .catch(this.handleError);
     }
     list(): Observable<any> {

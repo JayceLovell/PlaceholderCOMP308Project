@@ -7,14 +7,14 @@ import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticationModule } from './authentication/authentication.module';
-import { PatientDataModule } from './patiendData/patientData.module';
+import { PatientsDataModule } from './patientsData/patientsData.module';
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
         AuthenticationModule,
         HomeModule,
-        PatientDataModule,
+        PatientsDataModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [

@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/router", "../patientData.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "../patientsData.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,7 +9,7 @@ System.register(["@angular/core", "@angular/router", "../patientData.service"], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, patientData_service_1, EditComponent;
+    var core_1, router_1, patientsData_service_1, EditComponent;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -19,25 +19,25 @@ System.register(["@angular/core", "@angular/router", "../patientData.service"], 
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (patientData_service_1_1) {
-                patientData_service_1 = patientData_service_1_1;
+            function (patientsData_service_1_1) {
+                patientsData_service_1 = patientsData_service_1_1;
             }
         ],
         execute: function () {
             EditComponent = /** @class */ (function () {
-                function EditComponent(_router, _route, _patientDataService) {
+                function EditComponent(_router, _route, _patientsDataService) {
                     this._router = _router;
                     this._route = _route;
-                    this._patientDataService = _patientDataService;
+                    this._patientsDataService = _patientsDataService;
                     this.patientData = {};
                 }
                 EditComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.paramsObserver = this._route.params.subscribe(function (params) {
                         var patientDataId = params['patientDataId'];
-                        _this._patientDataService.read(patientDataId).subscribe(function (patientData) {
+                        _this._patientsDataService.read(patientDataId).subscribe(function (patientData) {
                             _this.patientData = patientData;
-                        }, function (error) { return _this._router.navigate(['/articles']); });
+                        }, function (error) { return _this._router.navigate(['/patientsData']); });
                     });
                 };
                 EditComponent.prototype.ngOnDestroy = function () {
@@ -45,17 +45,17 @@ System.register(["@angular/core", "@angular/router", "../patientData.service"], 
                 };
                 EditComponent.prototype.update = function () {
                     var _this = this;
-                    this._patientDataService.update(this.patientData).subscribe(function (savedArticle) { return _this._router.navigate(['/patientData', savedpatientData._id]); }, function (error) { return _this.errorMessage =
+                    this._patientsDataService.update(this.patientData).subscribe(function (savedpatientData) { return _this._router.navigate(['/patientsData', savedpatientData._id]); }, function (error) { return _this.errorMessage =
                         error; });
                 };
-                var _a;
                 EditComponent = __decorate([
                     core_1.Component({
                         selector: 'edit',
-                        templateUrl: 'app/paitentData/edit/edit.template.html'
+                        templateUrl: 'app/patientsData/edit/edit.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
-                        router_1.ActivatedRoute, typeof (_a = typeof patientData_service_1.PatientDataService !== "undefined" && patientData_service_1.PatientDataService) === "function" ? _a : Object])
+                        router_1.ActivatedRoute,
+                        patientsData_service_1.PatientsDataService])
                 ], EditComponent);
                 return EditComponent;
             }());

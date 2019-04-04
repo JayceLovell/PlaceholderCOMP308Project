@@ -1,0 +1,6 @@
+<section *ngIf="patientData && patientData.userName">
+    <h1>{{patientData.fullName}}</h1>
+    <div>
+        <a [routerLink]="['/patientsData', patientData._id, 'edit']">edit</a>
+    </div>    
+</section>
