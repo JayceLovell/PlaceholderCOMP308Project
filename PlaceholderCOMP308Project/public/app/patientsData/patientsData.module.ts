@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PatientsDataRoutes } from './patientsData.routes';
-import { PatientsDataComponent } from './patientsData.components';
+import { PatientsDataComponent } from './patientsData.component';
 //import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';

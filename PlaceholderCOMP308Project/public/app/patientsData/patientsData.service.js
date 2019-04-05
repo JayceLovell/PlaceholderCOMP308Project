@@ -38,6 +38,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                         .catch(this.handleError);
                 };
                 PatientsDataService.prototype.read = function (patientDataId) {
+                    console.log("in paitentsdata service read " + patientDataId);
                     return this._http
                         .get(this._baseURL + "/" + patientDataId)
                         .map(function (res) { return res.json(); })

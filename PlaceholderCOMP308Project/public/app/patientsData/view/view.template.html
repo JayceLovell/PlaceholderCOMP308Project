@@ -1,6 +1,6 @@
 <section *ngIf="patientData && patientData.patientId">
     <h1>{{patientData.patientFirstname}} {{patientData.patientLastname}}</h1>
     <div>
-        <a [routerLink]="['/patientsData', patientData._id, 'edit']">Update</a>
-    </div>    
-</section>
+        <a class="btn btn-warning" [routerLink]="['/patientsData', patientData._id, 'edit']">Update</a>
+    </div>
+</section> 

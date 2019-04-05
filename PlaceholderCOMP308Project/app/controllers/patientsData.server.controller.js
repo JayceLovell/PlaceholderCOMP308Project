@@ -55,6 +55,7 @@ exports.patientDataByID = function (req, res, next, id) {
 exports.read = function (req, res) {
     res.status(200).json(req.patientData);
     console.log("reading in controller");
+    console.log("Test in controller " + req.patientData);
 };
 exports.update = function (req, res) {
     const patientData = req.patientData;

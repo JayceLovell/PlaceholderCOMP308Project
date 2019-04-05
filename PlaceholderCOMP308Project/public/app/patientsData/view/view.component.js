@@ -45,11 +45,13 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                         _this._patientsDataService
                             .read(patientDataId)
                             .subscribe(function (patientData) {
+                            console.log("patientdata In subscribe " + JSON.stringify(patientData));
                             _this.patientData = patientData;
                             _this.allowEdit = true;
+                            console.log("this.patientData view component in subscribe " + JSON.stringify(_this.patientData));
                         }, function (error) { return _this._router.navigate(['/patientsData']); });
+                        console.log("PatientID " + patientDataId);
                     });
-                    console.log("Test in view " + this.patientData + " " + JSON.stringify(this.patientData));
                 };
                 //
                 ViewComponent.prototype.ngOnDestroy = function () {
@@ -64,7 +66,7 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                 ViewComponent = __decorate([
                     core_1.Component({
                         selector: 'view',
-                        templateUrl: 'app/patientsData/view/view.template.html',
+                        templateUrl: 'app/patientsData/view/view.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
                         router_1.ActivatedRoute,

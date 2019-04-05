@@ -4,7 +4,7 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 import { PatientsDataService } from '../patientsData.service';
 @Component({
     selector: 'view',
-    templateUrl: 'app/patientsData/view/view.template.html',
+    templateUrl: 'app/patientsData/view/view.template.html'
 })
 export class ViewComponent {
     user: any;
@@ -26,13 +26,15 @@ export class ViewComponent {
                 .read(patientDataId)
                 .subscribe(
                     patientData => {
+                        console.log("patientdata In subscribe "+JSON.stringify(patientData));
                         this.patientData = patientData;
                         this.allowEdit = true;
+                        console.log("this.patientData view component in subscribe " + JSON.stringify(this.patientData)); 
                     },
-                    error => this._router.navigate(['/patientsData'])
+                error => this._router.navigate(['/patientsData'])
                 );
-        });
-        console.log("Test in view "+this.patientData+" "+JSON.stringify(this.patientData));
+            console.log("PatientID " + patientDataId);    
+        });          
     }
     //
     ngOnDestroy() {

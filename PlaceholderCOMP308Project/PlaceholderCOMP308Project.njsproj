@@ -63,7 +63,7 @@
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsData\edit\edit.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\list\list.component.ts" />
-    <TypeScriptCompile Include="public\app\patientsData\patientsData.components.ts" />
+    <TypeScriptCompile Include="public\app\patientsData\patientsData.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.module.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.service.ts" />
