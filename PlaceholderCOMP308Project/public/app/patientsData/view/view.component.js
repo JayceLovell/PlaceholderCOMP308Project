@@ -34,23 +34,32 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                     this._route = _route;
                     this._authenticationService = _authenticationService;
                     this._patientsDataService = _patientsDataService;
+                    this.allowEdit = false;
                 }
                 //
                 ViewComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.user = this._authenticationService.user;
                     this.paramsObserver = this._route.params.subscribe(function (params) {
-                        var patientDateId = params['patientDateId'];
+                        var patientDataId = params['patientDataId'];
                         _this._patientsDataService
-                            .read(patientDateId)
+                            .read(patientDataId)
                             .subscribe(function (patientData) {
                             _this.patientData = patientData;
+                            _this.allowEdit = true;
                         }, function (error) { return _this._router.navigate(['/patientsData']); });
                     });
+                    console.log("Test in view " + this.patientData + " " + JSON.stringify(this.patientData));
                 };
                 //
                 ViewComponent.prototype.ngOnDestroy = function () {
                     this.paramsObserver.unsubscribe();
+                };
+                //
+                ViewComponent.prototype.delete = function () {
+                    var _this = this;
+                    this._patientsDataService.delete(this.patientData._id).
+                        subscribe(function (deletedPatientData) { return _this._router.navigate(['/patientsData']); }, function (error) { return _this.errorMessage = error; });
                 };
                 ViewComponent = __decorate([
                     core_1.Component({

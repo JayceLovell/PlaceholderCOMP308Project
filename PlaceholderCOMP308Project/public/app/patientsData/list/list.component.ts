@@ -9,10 +9,8 @@ export class ListComponent {
     errorMessage: string;
     constructor(private _patientsDataService: PatientsDataService) { }
     ngOnInit() {
-        console.log("calling list");
         this._patientsDataService.list().subscribe(patientsData => this.patientsData
             = patientsData);
-        console.log("cry bloody murder" + JSON.stringify(this.patientsData));
     }
 }
 

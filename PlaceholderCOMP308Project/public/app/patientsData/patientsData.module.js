@@ -51,6 +51,7 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "@angular
                         ],
                         declarations: [
                             patientsData_components_1.PatientsDataComponent,
+                            //CreateComponent,
                             list_component_1.ListComponent,
                             view_component_1.ViewComponent,
                             edit_component_1.EditComponent,

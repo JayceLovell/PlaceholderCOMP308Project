@@ -25,17 +25,17 @@ System.register(["@angular/core", "@angular/router", "../patientsData.service"],
         ],
         execute: function () {
             EditComponent = /** @class */ (function () {
-                function EditComponent(_router, _route, _patientsDataService) {
+                function EditComponent(_router, _route, _PatientsDataService) {
                     this._router = _router;
                     this._route = _route;
-                    this._patientsDataService = _patientsDataService;
+                    this._PatientsDataService = _PatientsDataService;
                     this.patientData = {};
                 }
                 EditComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.paramsObserver = this._route.params.subscribe(function (params) {
                         var patientDataId = params['patientDataId'];
-                        _this._patientsDataService.read(patientDataId).subscribe(function (patientData) {
+                        _this._PatientsDataService.read(patientDataId).subscribe(function (patientData) {
                             _this.patientData = patientData;
                         }, function (error) { return _this._router.navigate(['/patientsData']); });
                     });
@@ -45,7 +45,7 @@ System.register(["@angular/core", "@angular/router", "../patientsData.service"],
                 };
                 EditComponent.prototype.update = function () {
                     var _this = this;
-                    this._patientsDataService.update(this.patientData).subscribe(function (savedpatientData) { return _this._router.navigate(['/patientsData', savedpatientData._id]); }, function (error) { return _this.errorMessage =
+                    this._PatientsDataService.update(this.patientData).subscribe(function (savedPatientData) { return _this._router.navigate(['/patientsData', savedPatientData._id]); }, function (error) { return _this.errorMessage =
                         error; });
                 };
                 EditComponent = __decorate([

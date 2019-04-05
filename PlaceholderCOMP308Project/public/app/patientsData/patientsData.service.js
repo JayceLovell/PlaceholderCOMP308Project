@@ -31,6 +31,12 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                     this._http = _http;
                     this._baseURL = 'api/patientsData';
                 }
+                PatientsDataService.prototype.create = function (patientData) {
+                    return this._http
+                        .post(this._baseURL, patientData)
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
                 PatientsDataService.prototype.read = function (patientDataId) {
                     return this._http
                         .get(this._baseURL + "/" + patientDataId)
@@ -49,7 +55,6 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                         .catch(this.handleError);
                 };
                 PatientsDataService.prototype.list = function () {
-                    console.log("making list");
                     return this._http
                         .get(this._baseURL)
                         .map(function (res) { return res.json(); })

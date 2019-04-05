@@ -23,6 +23,7 @@ System.register(["./patientsData.components", "./list/list.component", "./view/v
                     component: patientsData_components_1.PatientsDataComponent,
                     children: [
                         { path: '', component: list_component_1.ListComponent },
+                        //{ path: 'create', component: CreateComponent },
                         { path: ':patientDataId', component: view_component_1.ViewComponent },
                         { path: ':patientDataId/edit', component: edit_component_1.EditComponent }
                     ],

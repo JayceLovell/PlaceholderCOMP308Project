@@ -1,5 +1,5 @@
-<section *ngIf="patientData && patientData.username">
-    <h1>{{patientData.fullName}}</h1>
+<section *ngIf="patientData && patientData.patientId">
+    <h1>{{patientData.patientFirstname}} {{patientData.patientLastname}}</h1>
     <div>
         <a [routerLink]="['/patientsData', patientData._id, 'edit']">Update</a>
     </div>    

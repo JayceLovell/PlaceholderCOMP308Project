@@ -1,9 +1,9 @@
 <h1>Patients Data</h1>
-<ul>
-    <li *ngFor="let patient of patientsData">
-        <a [routerLink]="['/patientsData', patientData._id]">{{patientsData.fullName}}</a>
+<ul class="list-group list-group-flush">
+    <li class="list-group-items" *ngFor="let patientData of patientsData">
+        <a [routerLink]="['/patientsData', patientData._id]">Data on {{patientData.patientFirstname}} {{patientData.patientLastname}}</a>
         <br>
-        <small>{{patientsData.created}}</small>
+        <p>{{patientData.created}}</p>
     </li>
 </ul>
 <div *ngIf="patientsData && patientsData.length === 0">

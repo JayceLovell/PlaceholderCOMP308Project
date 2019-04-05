@@ -17,6 +17,9 @@ exports.create = function (req, res) {
     patientData.patientUsername = req.body.username;
     patientData.patientFirstname = req.body.firstName;
     patientData.patientLastname = req.body.lastName;
+    patientData.bodyTemperature = " ";
+    patientData.heartRate = " ";
+    patientData.respiratoryRate = " ";
     patientData.save((err) => {
         if (err) {
             console.log("got error in making patient Data");
@@ -29,10 +32,21 @@ exports.create = function (req, res) {
         //}
     });
 };
+exports.list = function (req, res) {
+    PatientData.find().sort('-created').populate('patientId', 'firstName lastName fullName').exec((err, patientsData) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.status(200).json(patientsData);
+        }
+    });
+};
 exports.patientDataByID = function (req, res, next, id) {
-    PatientData.findById(id).populate('userName', 'firstName lastName fullName').exec((err, patientData) => {
+    PatientData.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientData) => {
         if (err) return next(err);
-        if (!patientData) return next(new Error('Failed to load patientData '
+        if (!patientData) return next(new Error('Failed to load article '
             + id));
         req.patientData = patientData;
         next();
@@ -40,6 +54,7 @@ exports.patientDataByID = function (req, res, next, id) {
 };
 exports.read = function (req, res) {
     res.status(200).json(req.patientData);
+    console.log("reading in controller");
 };
 exports.update = function (req, res) {
     const patientData = req.patientData;
@@ -57,15 +72,23 @@ exports.update = function (req, res) {
         }
     });
 };
-exports.list = function (req, res) {
-    console.log("called list in controller");
-    PatientData.find().sort('-created').populate('patientUsername','patientFirstname patientLastname fullName').exec((err, patientsData) => {
+exports.delete = function (req, res) {
+    const patientData = req.patientData;
+    patientData.remove((err) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         } else {
-            res.status(200).json(patientsData);
+            res.status(200).json(patientData);
         }
     });
+};
+exports.hasAuthorization = function (req, res, next) {
+    //if (req.article.creator.id !== req.user.id) {
+    //    return res.status(403).send({
+    //        message: 'User is not authorized'
+    //    });
+    //}
+    next();
 };

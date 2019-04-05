@@ -11,6 +11,7 @@ export class ViewComponent {
     patientData: any;
     paramsObserver: any;
     errorMessage: string;
+    allowEdit: boolean = false;
     //
     constructor(private _router: Router,
         private _route: ActivatedRoute,
@@ -20,19 +21,27 @@ export class ViewComponent {
     ngOnInit() {
         this.user = this._authenticationService.user
         this.paramsObserver = this._route.params.subscribe(params => {
-            let patientDateId = params['patientDateId'];
+            let patientDataId = params['patientDataId'];         
             this._patientsDataService
-                .read(patientDateId)
+                .read(patientDataId)
                 .subscribe(
                     patientData => {
                         this.patientData = patientData;
+                        this.allowEdit = true;
                     },
                     error => this._router.navigate(['/patientsData'])
                 );
         });
+        console.log("Test in view "+this.patientData+" "+JSON.stringify(this.patientData));
     }
     //
     ngOnDestroy() {
         this.paramsObserver.unsubscribe();
+    }
+    //
+    delete() {
+        this._patientsDataService.delete(this.patientData._id).
+            subscribe(deletedPatientData => this._router.navigate(['/patientsData']),
+                error => this.errorMessage = error);
     }
 }

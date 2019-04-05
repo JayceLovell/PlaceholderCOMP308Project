@@ -6,6 +6,12 @@ import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 export class PatientsDataService {
     private _baseURL = 'api/patientsData';
     constructor(private _http: Http) { }
+    create(patientData: any): Observable<any> {
+        return this._http
+            .post(this._baseURL, patientData)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
     read(patientDataId: string): Observable<any> {
         return this._http
             .get(`${this._baseURL}/${patientDataId}`)
@@ -23,12 +29,9 @@ export class PatientsDataService {
             .catch(this.handleError);
     }
     list(): Observable<any> {
-        console.log("making list");
         return this._http
             .get(this._baseURL)
-            .map(
-            (res: Response) => res.json()
-            )
+            .map((res: Response) => res.json())
             .catch(this.handleError);
     }
     private handleError(error: Response) {

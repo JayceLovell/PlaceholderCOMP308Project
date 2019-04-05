@@ -11,11 +11,11 @@ export class EditComponent {
     paramsObserver: any;
     constructor(private _router: Router,
         private _route: ActivatedRoute,
-        private _patientsDataService: PatientsDataService) { }
+        private _PatientsDataService: PatientsDataService) { }
     ngOnInit() {
         this.paramsObserver = this._route.params.subscribe(params => {
             let patientDataId = params['patientDataId'];
-            this._patientsDataService.read(patientDataId).subscribe(patientData => {
+            this._PatientsDataService.read(patientDataId).subscribe(patientData => {
                 this.patientData = patientData;
             },
                 error => this._router.navigate(['/patientsData']));
@@ -25,7 +25,7 @@ export class EditComponent {
         this.paramsObserver.unsubscribe();
     }
     update() {
-        this._patientsDataService.update(this.patientData).subscribe(savedpatientData => this._router.navigate(['/patientsData', savedpatientData._id]),
+        this._PatientsDataService.update(this.patientData).subscribe(savedPatientData => this._router.navigate(['/patientsData', savedPatientData._id]),
             error => this.errorMessage =
                 error);
     }
