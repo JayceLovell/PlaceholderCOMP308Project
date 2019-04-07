@@ -26,12 +26,12 @@ export class ViewComponent {
                 .read(patientDataId)
                 .subscribe(
                     patientData => {
-                        console.log("patientdata In subscribe "+JSON.stringify(patientData));
+                        console.log("patientdata In subscribe " + JSON.stringify(patientData));
                         this.patientData = patientData;
                         this.allowEdit = true;
-                        console.log("this.patientData view component in subscribe " + JSON.stringify(this.patientData)); 
+                        console.log("this.patientData view component in subscribe " + JSON.stringify(this.patientData));
                     },
-                error => this._router.navigate(['/patientsData'])
+                    error => this._router.navigate(['/patientsData'])
                 );
             console.log("PatientID " + patientDataId);    
         });          

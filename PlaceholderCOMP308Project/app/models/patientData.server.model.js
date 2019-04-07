@@ -29,15 +29,7 @@ const PatientDataSchema = new Schema({
     },
     created: {
         type: Date,
-        // Create a default 'created' value
         default: Date.now
     }
-});
-PatientDataSchema.virtual('fullName').get(function () {
-    return this.patientFirstname + ' ' + this.patientLastname;
-}).set(function (fullName) {
-    const splitName = fullName.split(' ');
-    this.patientFirstname = splitName[0] || '';
-    this.patientLastname = splitName[1] || '';
 });
 mongoose.model('PatientData', PatientDataSchema);

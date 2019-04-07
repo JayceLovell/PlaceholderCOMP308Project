@@ -44,10 +44,13 @@ exports.list = function (req, res) {
     });
 };
 exports.patientDataByID = function (req, res, next, id) {
+    console.log("Searching with PatientID in controller");
     PatientData.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientData) => {
-        if (err) return next(err);
+        if (err)
+            return next(err);
         if (!patientData) return next(new Error('Failed to load article '
             + id));
+        console.log("Checking to see if patientData has in anything in controller PatientID " + patientData + " " + JSON.stringify(patientData));
         req.patientData = patientData;
         next();
     });

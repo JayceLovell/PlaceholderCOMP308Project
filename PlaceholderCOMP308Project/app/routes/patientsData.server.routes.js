@@ -4,7 +4,7 @@ const patientsData = require('../controllers/patientsData.server.controller');
 module.exports = function (app) {
     app.route('/api/patientsData')
         .get(patientsData.list)
-        .post(users.requiresLogin, patientsData.create);
+        .post(users.requiresLogin, patientsData.list);
     app.route('/api/patientsData/:patientDataId')
         .get(patientsData.read)
         .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.
