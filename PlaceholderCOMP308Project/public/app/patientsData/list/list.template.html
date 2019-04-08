@@ -1,6 +1,6 @@
 <h1>Patients Data</h1>
 <ul class="list-group list-group-flush">
-    <li class="list-group-items" *ngFor="let patientData of patientsData">
+    <li class="list-group-item" *ngFor="let patientData of patientsData">
         <a [routerLink]="['/patientsData', patientData._id]">Data on {{patientData.patientFirstname}} {{patientData.patientLastname}}</a>
         <br>
         <p>{{patientData.created}}</p>

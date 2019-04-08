@@ -20,6 +20,7 @@ exports.create = function (req, res) {
     patientData.bodyTemperature = " ";
     patientData.heartRate = " ";
     patientData.respiratoryRate = " ";
+    patientData.bloodPressure = " ";
     patientData.save((err) => {
         if (err) {
             console.log("got error in making patient Data");
