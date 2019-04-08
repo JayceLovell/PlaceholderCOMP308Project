@@ -13,9 +13,6 @@ export class SigninComponent {
     //handle any value event with the
     //first arrow function and any error with the second arrow function
     signin() {
-        this._authenticationService.signin(
-            this.credentials).subscribe(result =>
-                this._router.navigate(['/']),
-            error => this.errorMessage = error);
+        this._authenticationService.signin(this.credentials).subscribe(result => this._router.navigate(['/']),error => this.errorMessage = error);
     }
 }

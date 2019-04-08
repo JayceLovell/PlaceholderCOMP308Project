@@ -20,21 +20,17 @@ export class AuthenticationService {
             'application/json'
         });
         let options = new RequestOptions({ headers: headers });
-        return this.http.post(this._signinURL, body, options)
-            .map(res => this.user = res.json())
-            .catch(this.handleError)
+        return this.http.post(this._signinURL, body, options).map(res => this.user = res.json()).catch(this.handleError)
     }
     signup(user: any): Observable<any> {
         let body = JSON.stringify(user);
-        console.log(body);
-        console.log(JSON.stringify(body));
+        //console.log(body);
+        //console.log(JSON.stringify(body));
         let headers = new Headers({
             'Content-Type':
             'application/json'
         }); let options = new RequestOptions({ headers: headers });
-        return this.http.post(this._signupURL, body, options)
-            .map(res => this.user = res.json())
-            .catch(this.handleError)
+        return this.http.post(this._signupURL, body, options).map(res => this.user = res.json()).catch(this.handleError)
     }
     private handleError(error: Response) {
         console.error(error);

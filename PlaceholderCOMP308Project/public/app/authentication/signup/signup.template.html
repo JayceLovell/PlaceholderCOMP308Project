@@ -20,8 +20,12 @@
         <input type="password" [(ngModel)]="user.password" name="password">
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="user.isPatient" name="isPatient" checked="checked"/>
-        <label class="form-check-label" for="isPatient">Are you a patient:</label>
+        <input class="form-check-input" type="radio" name="isPatient" id="isPatient" [(ngModel)]="user.isPatient" value="true"/>
+        <label class="form-check-label" for="isPatient">I am a Patient</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="isPatient" id="isPatient2" [(ngModel)]="user.isPatient" value="false" />
+        <label class="form-check-label" for="isPatient2">I am a Nurse</label>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-success btn-lg" value="Sign up" />

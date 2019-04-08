@@ -9,7 +9,7 @@ module.exports = function () {
 
     // Load the 'User' model 
     require('../app/models/user.server.model');
-    // Load the 'Patient' model 
+    // Load the 'PatientData' model 
     require('../app/models/patientData.server.model');
 
     // Return the Mongoose connection instance

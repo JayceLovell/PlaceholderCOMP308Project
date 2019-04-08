@@ -1,5 +1,6 @@
 ﻿// Load the module dependencies
 const User = require('mongoose').model('User');
+const patientsData = require('../controllers/patientsData.server.controller');
 const passport = require('passport');
 
 // Create a new error handling controller method
@@ -67,7 +68,9 @@ exports.signup = function (req, res) {
             // Remove sensitive data before login
             user.password = undefined;
             user.salt = undefined;
-
+            if (user.isPatient) {
+                patientsData.create(req, res);
+            }
             // Login the user
             req.login(user, function (err) {
                 if (err) {
