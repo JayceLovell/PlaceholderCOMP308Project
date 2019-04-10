@@ -23,7 +23,6 @@ exports.create = function (req, res) {
     patientData.bloodPressure = " ";
     patientData.save((err) => {
         if (err) {
-            console.log("got error in making patient Data");
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
@@ -49,7 +48,7 @@ exports.patientDataByID = function (req, res, next, id) {
     PatientData.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientData) => {
         if (err)
             return next(err);
-        if (!patientData) return next(new Error('Failed to load article '
+        if (!patientData) return next(new Error('Failed to load patient data '
             + id));
         console.log("Checking to see if patientData has in anything in controller PatientID " + patientData + " " + JSON.stringify(patientData));
         req.patientData = patientData;
@@ -58,15 +57,14 @@ exports.patientDataByID = function (req, res, next, id) {
 };
 exports.read = function (req, res) {
     res.status(200).json(req.patientData);
-    console.log("reading in controller");
-    console.log("Test in controller " + req.patientData);
 };
 exports.update = function (req, res) {
     const patientData = req.patientData;
     patientData.bodyTemperature = req.body.bodyTemperature;
     patientData.heartRate = req.body.heartRate;
     patientData.bloodPressure = req.body.bloodPressure;
-    patientData.respiratoryRate = req.body.respiratoryRate;    
+    patientData.respiratoryRate = req.body.respiratoryRate;
+    patientData.dateUpdated = Date.now();
     patientData.save((err) => {
         if (err) {
             return res.status(400).send({

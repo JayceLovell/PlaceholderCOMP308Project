@@ -27,16 +27,9 @@ const PatientDataSchema = new Schema({
     respiratoryRate: {
         type: String
     },
-    created: {
+    dateUpdated: {
         type: Date,
         default: Date.now
     }
-});
-PatientDataSchema.virtual('fullName').get(function () {
-    return this.patientFirstname + ' ' + this.patientLastname;
-}).set(function (fullName) {
-    const splitName = fullName.split(' ');
-    this.patientFirstname = splitName[0] || '';
-    this.patientLastname = splitName[1] || '';
 });
 mongoose.model('PatientData', PatientDataSchema);
