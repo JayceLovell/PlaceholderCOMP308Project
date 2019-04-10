@@ -33,7 +33,7 @@ exports.create = function (req, res) {
     });
 };
 exports.list = function (req, res) {
-    PatientData.find().sort('-created').populate('patientId', 'firstName lastName fullName').exec((err, patientsData) => {
+    PatientData.find().sort('-dateUpdated').populate('patientId', 'firstName lastName fullName').exec((err, patientsData) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)

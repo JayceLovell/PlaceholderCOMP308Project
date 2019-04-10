@@ -23,6 +23,17 @@ exports.create = function (req, res) {
         }
     });
 };
+exports.list = function (req, res) {
+    PatientTip.find().sort('-dateOfTip').populate('patientId', 'firstName lastName fullName').exec((err, patientsTip) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.status(200).json(patientsTip);
+        }
+    });
+};
 exports.patientTipById = function (req, res, next, id) {
     PatientTip.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientTip) => {
         if (err)
