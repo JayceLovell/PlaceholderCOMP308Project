@@ -6,3 +6,16 @@ import { PatientsTipRoutes } from './patientsTip.routes';
 import { PatientsTipComponent } from './patientsTip.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
+@NgModule({
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule.forChild(PatientsTipRoutes),
+    ],
+    declarations: [
+        PatientsTipComponent,
+        ViewComponent,
+        EditComponent,
+    ]
+})
+export class PatientsTipModule { }

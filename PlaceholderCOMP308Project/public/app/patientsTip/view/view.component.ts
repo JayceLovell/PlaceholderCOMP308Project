@@ -4,7 +4,7 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 import { PatientsTipService } from '../../patientsTip/patientsTip.service';
 @Component({
     selector: 'view',
-    templateUr: 'app/patientsTip/view/view.template.html'
+    templateUrl: 'app/patientsTip/view/view.template.html'
 })
 export class ViewComponent {
     user: any;

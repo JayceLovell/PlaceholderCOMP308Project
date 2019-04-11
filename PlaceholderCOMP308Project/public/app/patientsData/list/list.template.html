@@ -3,7 +3,7 @@
     <li class="list-group-item" *ngFor="let patientData of patientsData">
         <h2>Patient: {{patientData.patientFirstname}} {{patientData.patientLastname}} </h2>
         <a [routerLink]="['/patientsData', patientData._id]">Patients Data</a>
-        <a [routerLink]="['/patientsTip', patientTip_id">Send Tip to Patient</a>
+        <a [routerLink]="['/patientsTip', patientTip_id]">Send Tip to Patient</a>
         <br>
     </li>
 </ul>

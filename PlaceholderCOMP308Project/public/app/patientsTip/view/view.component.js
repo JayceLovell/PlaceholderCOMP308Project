@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/router", "../../authentication/authentication.service", "../patientsData.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "../../authentication/authentication.service", "../../patientsTip/patientsTip.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,7 +9,7 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, authentication_service_1, patientsData_service_1, ViewComponent;
+    var core_1, router_1, authentication_service_1, patientsTip_service_1, ViewComponent;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -22,18 +22,18 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
             function (authentication_service_1_1) {
                 authentication_service_1 = authentication_service_1_1;
             },
-            function (patientsData_service_1_1) {
-                patientsData_service_1 = patientsData_service_1_1;
+            function (patientsTip_service_1_1) {
+                patientsTip_service_1 = patientsTip_service_1_1;
             }
         ],
         execute: function () {
             ViewComponent = /** @class */ (function () {
                 //
-                function ViewComponent(_router, _route, _authenticationService, _patientsDataService) {
+                function ViewComponent(_router, _route, _authenticationService, _patientsTipService) {
                     this._router = _router;
                     this._route = _route;
                     this._authenticationService = _authenticationService;
-                    this._patientsDataService = _patientsDataService;
+                    this._patientsTipService = _patientsTipService;
                     this.allowEdit = false;
                 }
                 //
@@ -41,34 +41,28 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                     var _this = this;
                     this.user = this._authenticationService.user;
                     this.paramsObserver = this._route.params.subscribe(function (params) {
-                        var patientDataId = params['patientDataId'];
-                        _this._patientsDataService
-                            .read(patientDataId)
-                            .subscribe(function (patientData) {
-                            _this.patientData = patientData;
+                        var patientTipId = params['patientTipId'];
+                        _this._patientsTipService
+                            .read(patientTipId)
+                            .subscribe(function (patientTip) {
+                            _this.patientTip = patientTip;
                             _this.allowEdit = true;
-                        }, function (error) { return _this._router.navigate(['/patientsData']); });
+                        }, function (error) { return _this._router.navigate(['/patientsTip']); });
                     });
                 };
                 //
                 ViewComponent.prototype.ngOnDestroy = function () {
                     this.paramsObserver.unsubscribe();
                 };
-                //
-                ViewComponent.prototype.delete = function () {
-                    var _this = this;
-                    this._patientsDataService.delete(this.patientData._id).
-                        subscribe(function (deletedPatientData) { return _this._router.navigate(['/patientsData']); }, function (error) { return _this.errorMessage = error; });
-                };
                 ViewComponent = __decorate([
                     core_1.Component({
                         selector: 'view',
-                        templateUrl: 'app/patientsData/view/view.template.html'
+                        templateUrl: 'app/patientsTip/view/view.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
                         router_1.ActivatedRoute,
                         authentication_service_1.AuthenticationService,
-                        patientsData_service_1.PatientsDataService])
+                        patientsTip_service_1.PatientsTipService])
                 ], ViewComponent);
                 return ViewComponent;
             }());
