@@ -6,6 +6,12 @@ import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 export class PatientsTipService {
     private _baseURL = 'api/patientsTip';
     constructor(private _http: Http) { }
+    list(): Observable<any> {
+        return this._http
+            .get(this._baseURL)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
     read(patientTipId: string): Observable<any> {
         return this._http
             .get(`${this._baseURL}/${patientTipId}`)

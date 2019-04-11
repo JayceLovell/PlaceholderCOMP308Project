@@ -13,7 +13,7 @@ function getErrorMessage(err) {
 };
 exports.create = function (req, res) {
     const patientTip = new PatientTip(req.body);
-    patientTip.patientId = req.user;
+    patientTip.patientTipId = req.user;
     patientTip.tip = " ";
     patientTip.save((err) => {
         if (err) {
@@ -24,22 +24,24 @@ exports.create = function (req, res) {
     });
 };
 exports.list = function (req, res) {
-    PatientTip.find().sort('-dateOfTip').populate('patientId', 'firstName lastName fullName').exec((err, patientsTip) => {
+    console.log("in patients Tip controller");
+    PatientTip.find().sort('-dateOfTip').populate('patientTipId', 'tip').exec((err, patientsTip) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
-        } else {
+        } else {;
             res.status(200).json(patientsTip);
         }
     });
 };
 exports.patientTipById = function (req, res, next, id) {
-    PatientTip.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientTip) => {
+    PatientTip.findById(id).populate('patientTipId', 'tip').exec((err, patientTip) => {
         if (err)
             return next(err);
         if (!patientTip) return next(new Error('Failed to load patient tip' + id));
         req.patientTip = patientTip;
+        console.log("patienTipById "+patientTip);
         next();
     });
 };

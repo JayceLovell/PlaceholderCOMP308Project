@@ -13,7 +13,6 @@ export class PatientsDataService {
             .catch(this.handleError);
     }
     read(patientDataId: string): Observable<any> {
-        console.log("in paitentsdata service read " + patientDataId);
         return this._http
             .get(`${this._baseURL}/${patientDataId}`)
             .map((res: Response) => res.json())

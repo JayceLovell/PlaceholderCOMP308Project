@@ -5,8 +5,8 @@ import { EditComponent } from './edit/edit.component';
 export const PatientsTipRoutes: Routes = [{
     path: 'patientsTip',
     component: PatientsTipComponent,
-    child: [
-        { path: ':patientDataId', component: ViewComponent },
-        { path: ':patientDataId/edit', component: EditComponent }
+    children: [
+        { path: ':patientTipId', component: ViewComponent },
+        { path: ':patientTipId/edit', component: EditComponent }
     ],
 }];

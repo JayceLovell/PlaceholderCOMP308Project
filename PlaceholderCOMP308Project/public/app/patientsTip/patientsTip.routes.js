@@ -18,9 +18,9 @@ System.register(["./patientsTip.component", "./view/view.component", "./edit/edi
             exports_1("PatientsTipRoutes", PatientsTipRoutes = [{
                     path: 'patientsTip',
                     component: patientsTip_component_1.PatientsTipComponent,
-                    child: [
-                        { path: ':patientDataId', component: view_component_1.ViewComponent },
-                        { path: ':patientDataId/edit', component: edit_component_1.EditComponent }
+                    children: [
+                        { path: ':patientTipId', component: view_component_1.ViewComponent },
+                        { path: ':patientTipId/edit', component: edit_component_1.EditComponent }
                     ],
                 }]);
         }

@@ -31,6 +31,13 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                     this._http = _http;
                     this._baseURL = 'api/patientsTip';
                 }
+                PatientsTipService.prototype.list = function () {
+                    console.log("In patientsTip service");
+                    return this._http
+                        .get(this._baseURL)
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
                 PatientsTipService.prototype.read = function (patientTipId) {
                     return this._http
                         .get(this._baseURL + "/" + patientTipId)

@@ -1,12 +1,14 @@
-<h1>Patients Data</h1>
+<h1>Patients</h1>
 <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let patientData of patientsData">
+    <li class="list-group-item" *ngFor="let patientData of patientsData, let patientTip of patientsTip">
         <h2>Patient: {{patientData.patientFirstname}} {{patientData.patientLastname}} </h2>
-        <a [routerLink]="['/patientsData', patientData._id]">Patients Data</a>
-        <a [routerLink]="['/patientsTip', patientTip_id]">Send Tip to Patient</a>
+        <div class="btn-group-lg" role="group" aria-label="I don't know">
+            <a class="btn btn-secondary" [routerLink]="['/patientsData', patientData._id]">Patients Data</a>
+            <a class="btn btn-secondary" [routerLink]="['/patientsTip', patientTip_id]">Send Tip to Patient</a>
+        </div>
         <br>
     </li>
 </ul>
-<div *ngIf="patientsData && patientsData.length === 0">
-    No patients Data yet, why don't you 
-</div>
+<!--<div *ngIf="(!patientsData && patientsData.length === 0) && (!patientsTip && patientsTip.length === 0)">
+    No patients yet 
+</div>-->
