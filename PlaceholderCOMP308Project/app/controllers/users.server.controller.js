@@ -1,6 +1,7 @@
 ﻿// Load the module dependencies
 const User = require('mongoose').model('User');
 const patientsData = require('../controllers/patientsData.server.controller');
+const patientsTip = require('../controllers/patientsTip.server.controller');
 const passport = require('passport');
 
 // Create a new error handling controller method
@@ -70,6 +71,7 @@ exports.signup = function (req, res) {
             user.salt = undefined;
             if (user.isPatient) {
                 patientsData.create(req, res);
+                patientsTip.create(req, res);
             }
             // Login the user
             req.login(user, function (err) {

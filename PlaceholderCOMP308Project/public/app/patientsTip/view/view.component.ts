@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../authentication/authentication.service';
-import { PatientsDataService } from '../patientsData.service';
+import { PatientsTipService } from '../../patientsTip/patientsTip.service';
 @Component({
     selector: 'view',
-    templateUrl: 'app/patientsData/view/view.template.html'
+    templateUr: 'app/patientsTip/view/view.template.html'
 })
 export class ViewComponent {
     user: any;
-    patientData: any;
+    patientTip: any;
     paramsObserver: any;
     errorMessage: string;
     allowEdit: boolean = false;
@@ -16,31 +16,25 @@ export class ViewComponent {
     constructor(private _router: Router,
         private _route: ActivatedRoute,
         private _authenticationService: AuthenticationService,
-        private _patientsDataService: PatientsDataService) { }
+        private _patientsTipService: PatientsTipService) { }
     //
     ngOnInit() {
         this.user = this._authenticationService.user
         this.paramsObserver = this._route.params.subscribe(params => {
-            let patientDataId = params['patientDataId'];         
-            this._patientsDataService
-                .read(patientDataId)
+            let patientTipId = params['patientTipId'];
+            this._patientsTipService
+                .read(patientTipId)
                 .subscribe(
-                    patientData => {
-                        this.patientData = patientData;
+                    patientTip => {
+                        this.patientTip = patientTip;
                         this.allowEdit = true;
                     },
-                    error => this._router.navigate(['/patientsData'])
+                    error => this._router.navigate(['/patientsTip'])
                 );
-        });          
+        });
     }
     //
     ngOnDestroy() {
         this.paramsObserver.unsubscribe();
-    }
-    //
-    delete() {
-        this._patientsDataService.delete(this.patientData._id).
-            subscribe(deletedPatientData => this._router.navigate(['/patientsData']),
-                error => this.errorMessage = error);
     }
 }
