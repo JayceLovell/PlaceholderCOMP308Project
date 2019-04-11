@@ -6,11 +6,11 @@ import { PatientsDataService } from '../patientsData.service';
 })
 export class ListComponent {
     patientsData: any;
+    patientsTip: any;
     errorMessage: string;
     constructor(private _patientsDataService: PatientsDataService) { }
     ngOnInit() {
-        this._patientsDataService.list().subscribe(patientsData => this.patientsData
-            = patientsData);
+        this._patientsDataService.list().subscribe(patientsData => this.patientsData = patientsData);
     }
 }
 
