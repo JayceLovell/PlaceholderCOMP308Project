@@ -14,27 +14,20 @@ function getErrorMessage(err) {
 exports.create = function (req, res) {
     const patientData = new PatientData(req.body);
     patientData.patientId = req.user;
-    patientData.patientUsername = req.body.username;
-    patientData.patientFirstname = req.body.firstName;
-    patientData.patientLastname = req.body.lastName;
-    patientData.bodyTemperature = " ";
-    patientData.heartRate = " ";
-    patientData.respiratoryRate = " ";
-    patientData.bloodPressure = " ";
-    patientData.tip = " ";
     patientData.save((err) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         }
-        //else {
-        //    //res.status(200).json(patientData);
-        //}
+        else {
+            res.status(200).json(patientData);
+        }
     });
 };
-exports.list = function (req, res) {
-    PatientData.find().sort('-dateUpdated').populate('patientId', 'firstName lastName fullName').exec((err, patientsData) => {
+exports.listByID = function (req, res,next,id) {
+    var query = { patientId: id };
+    PatientData.find(query).exec((err, patientsData) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
@@ -73,37 +66,11 @@ exports.update = function (req, res) {
         }
     });
 };
-exports.updateTip = function (req, res) {
-    const patientData = req.patientData;
-    patientData.tip = req.body.tip;
-    patientData.dateOfTip = Date.now();
-    patientData.save((err) => {
-        if (err) {
-            return res.status(400).send({
-                message: getErrorMessage(err)
-            });
-        } else {
-            res.status(200).json(patientData);
-        }
-    });
-};
-exports.delete = function (req, res) {
-    const patientData = req.patientData;
-    patientData.remove((err) => {
-        if (err) {
-            return res.status(400).send({
-                message: getErrorMessage(err)
-            });
-        } else {
-            res.status(200).json(patientData);
-        }
-    });
-};
 exports.hasAuthorization = function (req, res, next) {
-    //if (req.article.creator.id !== req.user.id) {
-    //    return res.status(403).send({
-    //        message: 'User is not authorized'
-    //    });
-    //}
+    if (req.user.isPatient===true) {
+        return res.status(403).send({
+            message: 'User is not authorized'
+        });
+    }
     next();
 };

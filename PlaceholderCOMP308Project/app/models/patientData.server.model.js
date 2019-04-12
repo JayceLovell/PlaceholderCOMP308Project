@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const PatientDataSchema = new Schema({
     patientId: {
         type: Schema.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     patientUsername: {
         type: String
@@ -26,13 +27,6 @@ const PatientDataSchema = new Schema({
     },
     respiratoryRate: {
         type: String
-    },
-    tip: {
-        type: String
-    },
-    dateOfTip: {
-        type: Date,
-        default: Date.now
     },
     dateCreated: {
         type: Date,

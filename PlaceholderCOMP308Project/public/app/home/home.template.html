@@ -3,8 +3,7 @@
     <div class="btn-group-vertical">
         <a class="btn btn-dark" href="/api/auth/signout">Signout</a>
         <div *ngIf="user.isPatient">
-            <a class="btn btn-light" [routerLink]="['/patientsView', user._id]">Enter</a>
-            <a class="btn btn-light" [routerLink]="['/patientsView', user._id]">Game</a>
+            <a class="btn btn-danger" [routerLink]="['']">Medical Advice</a>
 
             <a class="btn btn-danger" href="mailto:testingnurseemail@gmail.com?subject=EMERGENCY%20ALERT!!!&body=I%20NEED%20URGENT%20ATTENTION!!!" rel="EMAIL">EMERGENCY ALERT</a>
 
