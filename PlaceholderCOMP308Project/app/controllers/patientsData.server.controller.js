@@ -21,6 +21,7 @@ exports.create = function (req, res) {
     patientData.heartRate = " ";
     patientData.respiratoryRate = " ";
     patientData.bloodPressure = " ";
+    patientData.tip = " ";
     patientData.save((err) => {
         if (err) {
             return res.status(400).send({
@@ -62,7 +63,20 @@ exports.update = function (req, res) {
     patientData.heartRate = req.body.heartRate;
     patientData.bloodPressure = req.body.bloodPressure;
     patientData.respiratoryRate = req.body.respiratoryRate;
-    patientData.dateUpdated = Date.now();
+    patientData.save((err) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.status(200).json(patientData);
+        }
+    });
+};
+exports.updateTip = function (req, res) {
+    const patientData = req.patientData;
+    patientData.tip = req.body.tip;
+    patientData.dateOfTip = Date.now();
     patientData.save((err) => {
         if (err) {
             return res.status(400).send({

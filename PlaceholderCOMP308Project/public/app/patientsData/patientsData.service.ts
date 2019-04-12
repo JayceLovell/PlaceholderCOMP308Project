@@ -21,6 +21,10 @@ export class PatientsDataService {
         return this._http
             .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
             .catch(this.handleError);
+    } updateTip(patientData: any): Observable<any> {
+        return this._http
+            .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
+            .catch(this.handleError);
     }
     delete(patientDataId: any): Observable<any> {
         return this._http

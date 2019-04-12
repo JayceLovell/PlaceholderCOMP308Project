@@ -27,7 +27,14 @@ const PatientDataSchema = new Schema({
     respiratoryRate: {
         type: String
     },
-    dateUpdated: {
+    tip: {
+        type: String
+    },
+    dateOfTip: {
+        type: Date,
+        default: Date.now
+    },
+    dateCreated: {
         type: Date,
         default: Date.now
     }

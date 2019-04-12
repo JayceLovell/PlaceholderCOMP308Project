@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PatientsDataRoutes } from './patientsData.routes';
 import { PatientsDataComponent } from './patientsData.component';
-//import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';
+import { ViewTipComponent } from '../patientsData/tip/view/view.component';
 import { EditComponent } from './edit/edit.component';
+import { EditTipComponent } from '../patientsData/tip/edit/edit.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -16,10 +17,11 @@ import { EditComponent } from './edit/edit.component';
     ],
     declarations: [
         PatientsDataComponent,
-        //CreateComponent,
         ListComponent,
         ViewComponent,
+        ViewTipComponent,
         EditComponent,
+        EditTipComponent
     ]
 })
 export class PatientsDataModule { }

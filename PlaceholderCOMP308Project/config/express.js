@@ -54,7 +54,6 @@ module.exports = function () {
     // Load the routing files	
     require('../app/routes/users.server.routes.js')(app);
     require('../app/routes/patientsData.server.routes.js')(app);
-    require('../app/routes/patientsTip.server.routes')(app);
     require('../app/routes/index.server.routes.js')(app);
 
     // Return the Express application instance

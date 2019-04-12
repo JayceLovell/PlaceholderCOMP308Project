@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { PatientsDataService } from './patientsData.service';
-import { PatientsTipService } from '../patientsTip/patientsTip.service';
 @Component({
-    selector: 'patientsData, patientsTip',
+    selector: 'patientsData',
     template: '<router-outlet></router-outlet>',
-    providers: [PatientsDataService,PatientsTipService],
+    providers: [PatientsDataService]
 })
 export class PatientsDataComponent { }

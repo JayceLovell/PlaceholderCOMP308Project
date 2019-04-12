@@ -28,7 +28,7 @@
     "core-js": "^2.6.5",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-session": "^1.15.6",
+    "express-session": "^1.16.1",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.18",
     "morgan": "^1.9.1",

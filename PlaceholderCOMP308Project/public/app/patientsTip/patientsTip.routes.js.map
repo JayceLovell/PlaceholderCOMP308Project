@@ -1,1 +1,0 @@
-{"version":3,"file":"patientsTip.routes.js","sourceRoot":"","sources":["patientsTip.routes.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;YAIA,+BAAa,iBAAiB,GAAW,CAAC;oBACtC,IAAI,EAAE,aAAa;oBACnB,SAAS,EAAE,4CAAoB;oBAC/B,QAAQ,EAAE;wBACN,EAAE,IAAI,EAAE,eAAe,EAAE,SAAS,EAAE,8BAAa,EAAE;wBACnD,EAAE,IAAI,EAAE,oBAAoB,EAAE,SAAS,EAAE,8BAAa,EAAE;qBAC3D;iBACJ,CAAC,EAAC;QAAA,CAAC"}

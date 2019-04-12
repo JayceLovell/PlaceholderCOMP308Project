@@ -42,9 +42,9 @@
     <Content Include="public\app\home\home.template.html" />
     <Content Include="public\app\patientsData\edit\edit.template.html" />
     <Content Include="public\app\patientsData\list\list.template.html" />
+    <Content Include="public\app\patientsData\tip\edit\edit.template.html" />
+    <Content Include="public\app\patientsData\tip\view\view.template.html" />
     <Content Include="public\app\patientsData\view\view.template.html" />
-    <Content Include="public\app\patientsTip\edit\edit.template.html" />
-    <Content Include="public\app\patientsTip\view\view.template.html" />
     <Content Include="typings.json" />
     <Content Include="typings\globals\core-js\typings.json" />
     <Content Include="typings\globals\jasmine\typings.json" />
@@ -69,13 +69,9 @@
     <TypeScriptCompile Include="public\app\patientsData\patientsData.module.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.service.ts" />
+    <TypeScriptCompile Include="public\app\patientsData\tip\edit\edit.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsData\tip\view\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\view\view.component.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\edit\edit.component.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\patientsTip.component.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\patientsTip.module.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\patientsTip.routes.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\patientsTip.service.ts" />
-    <TypeScriptCompile Include="public\app\patientsTip\view\view.component.ts" />
     <TypeScriptCompile Include="server.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
@@ -101,13 +97,13 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
-    <Folder Include="public\app\patientsTip\" />
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
     <Folder Include="public\app\patientsData\edit\" />
+    <Folder Include="public\app\patientsData\tip\" />
+    <Folder Include="public\app\patientsData\tip\edit\" />
+    <Folder Include="public\app\patientsData\tip\view\" />
     <Folder Include="public\app\patientsData\view\" />
-    <Folder Include="public\app\patientsTip\edit\" />
-    <Folder Include="public\app\patientsTip\view\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -120,15 +116,12 @@
     <Compile Include="app\controllers\patientsData.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\controllers\patientsTip.server.controller.js" />
     <Compile Include="app\controllers\users.server.controller.js" />
     <Compile Include="app\models\patientData.server.model.js" />
-    <Compile Include="app\models\patientTip.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\routes\index.server.routes.js" />
     <Compile Include="app\routes\patientsData.server.routes.js" />
     <Compile Include="app\routes\patients.server.routes.js" />
-    <Compile Include="app\routes\patientsTip.server.routes.js" />
     <Compile Include="app\routes\users.server.routes.js" />
     <Compile Include="config\config.js" />
     <Compile Include="config\env\development.js" />
