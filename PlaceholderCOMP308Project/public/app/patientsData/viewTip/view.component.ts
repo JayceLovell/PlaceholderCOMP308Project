@@ -4,9 +4,9 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 import { PatientsDataService } from '../patientsData.service';
 @Component({
     selector: 'view',
-    templateUrl: 'app/patientsData/view/view.template.html'
+    templateUrl: 'app/patientsData/viewTip/view.template.html'
 })
-export class ViewComponent {
+export class ViewTipComponent {
     user: any;
     patientData: any;
     paramsObserver: any;
@@ -37,5 +37,4 @@ export class ViewComponent {
     ngOnDestroy() {
         this.paramsObserver.unsubscribe();
     }
-    //
 }

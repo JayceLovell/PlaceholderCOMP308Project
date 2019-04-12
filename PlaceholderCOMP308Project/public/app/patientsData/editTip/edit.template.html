@@ -1,0 +1,11 @@
+<h1>Send Patient A Message</h1>
+<form (ngSubmit)="update()" validate>
+    <div class="form-group">
+        <label for="ip">Message</label>
+        <textarea required [(ngModel)]="patientData.tip" class="form-control" name="tip" rows="5"></textarea>
+    </div>    
+    <div class="form-group">
+        <input class="btn btn-warning" type="submit" value="Update">
+    </div>
+    <strong>{{errorMessage}}</strong>
+</form>

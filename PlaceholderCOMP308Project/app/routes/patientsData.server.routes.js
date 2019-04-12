@@ -11,5 +11,8 @@ module.exports = function (app) {
             update)
         .delete(users.requiresLogin, patientsData.hasAuthorization, patientsData.
             delete);
+    app.route('/api/patientsData/:patientDataId/editTip')
+        .get(patientsData.read)
+        .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.updateTip);
     app.param('patientDataId', patientsData.patientDataByID);
 };

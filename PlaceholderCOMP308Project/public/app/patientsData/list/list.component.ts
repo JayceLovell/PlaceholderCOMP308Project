@@ -9,8 +9,7 @@ export class ListComponent {
     errorMessage: string;
     constructor(private _patientsDataService: PatientsDataService) { }
     ngOnInit() {
-        this._patientsDataService.list().subscribe(patientsData => this.patientsData
-            = patientsData);
+        this._patientsDataService.list().subscribe(patientsData => this.patientsData = patientsData);
     }
 }
 

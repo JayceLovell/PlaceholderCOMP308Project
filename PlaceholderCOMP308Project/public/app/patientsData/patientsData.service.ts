@@ -13,7 +13,6 @@ export class PatientsDataService {
             .catch(this.handleError);
     }
     read(patientDataId: string): Observable<any> {
-        console.log("in paitentsdata service read " + patientDataId);
         return this._http
             .get(`${this._baseURL}/${patientDataId}`)
             .map((res: Response) => res.json())
@@ -22,11 +21,9 @@ export class PatientsDataService {
         return this._http
             .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
             .catch(this.handleError);
-    }
-    delete(patientDataId: any): Observable<any> {
+    } updateTip(patientData: any): Observable<any> {
         return this._http
-            .delete(`${this._baseURL}/${patientDataId}`)
-            .map((res: Response) => res.json())
+            .put(`${this._baseURL}/${patientData._id}/editTip`, patientData,).map((res: Response) => res.json())
             .catch(this.handleError);
     }
     list(): Observable<any> {

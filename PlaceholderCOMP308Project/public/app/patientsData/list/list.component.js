@@ -27,8 +27,7 @@ System.register(["@angular/core", "../patientsData.service"], function (exports_
                 }
                 ListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._patientsDataService.list().subscribe(function (patientsData) { return _this.patientsData
-                        = patientsData; });
+                    this._patientsDataService.list().subscribe(function (patientsData) { return _this.patientsData = patientsData; });
                 };
                 ListComponent = __decorate([
                     core_1.Component({

@@ -1,0 +1,20 @@
+<section *ngIf="patientData">
+    <h1>{{patientData.patientFirstname}} {{patientData.patientLastname}}</h1>
+    <h3>Body Temperature</h3>
+    <p>{{patientData.bodyTemperature}}</p>
+    <h3>Heart Rate</h3>
+    <p>{{patientData.heartRate}}</p>
+    <h3>Blood Pressure</h3>
+    <p>{{patientData.bloodPressure}}</p>
+    <h3>Respetory Rate</h3>
+    <p>{{patientData.respiratoryRate}}</p>
+    <h3>Message of the day recieved on {{patientData.dateOfTip}}</h3>
+    <p>{{patientData.tip}}</p>
+    <p></p>
+    <div>
+        <a class="btn btn-warning" [routerLink]="['/patientsData', patientData._id, 'edit']">Update Information</a>
+    </div>
+</section>
+<section *ngIf="!patientData">
+    <h1>Can't find patientData</h1>
+</section>
