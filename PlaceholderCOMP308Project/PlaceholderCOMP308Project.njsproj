@@ -103,6 +103,7 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\patientList\" />
     <Folder Include="public\app\patientsView\" />
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
@@ -121,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\controllers\index.server.controller.js" />
+    <Compile Include="app\controllers\patientDaily.server.controller.js" />
     <Compile Include="app\controllers\patientsData.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
@@ -128,11 +130,10 @@
     <Compile Include="app\controllers\users.server.controller.js" />
     <Compile Include="app\models\patientData.server.model.js" />
     <Compile Include="app\models\patientSymptom.server.model.js" />
-    <Compile Include="app\models\patientTip.server.model.js" />
+    <Compile Include="app\models\patientDaily.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\routes\index.server.routes.js" />
     <Compile Include="app\routes\patientsData.server.routes.js" />
-    <Compile Include="app\routes\patientsView.server.routes.js" />
     <Compile Include="app\routes\users.server.routes.js" />
     <Compile Include="config\config.js" />
     <Compile Include="config\env\development.js" />
