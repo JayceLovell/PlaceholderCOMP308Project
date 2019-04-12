@@ -45,6 +45,7 @@
     <Content Include="public\app\patientsData\editTip\edit.template.html" />
     <Content Include="public\app\patientsData\viewTip\view.template.html" />
     <Content Include="public\app\patientsData\view\view.template.html" />
+    <Content Include="public\app\patientsView\View\view.template.html" />
     <Content Include="typings.json" />
     <Content Include="typings\globals\core-js\typings.json" />
     <Content Include="typings\globals\jasmine\typings.json" />
@@ -72,6 +73,11 @@
     <TypeScriptCompile Include="public\app\patientsData\editTip\edit.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\viewTip\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\view\view.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsView\patientsView.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsView\patientsView.module.ts" />
+    <TypeScriptCompile Include="public\app\patientsView\patientsView.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientsView\patientsView.service.ts" />
+    <TypeScriptCompile Include="public\app\patientsView\View\view.component.ts" />
     <TypeScriptCompile Include="server.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
@@ -97,12 +103,15 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\patientsView\" />
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
     <Folder Include="public\app\patientsData\edit\" />
     <Folder Include="public\app\patientsData\editTip\" />
     <Folder Include="public\app\patientsData\viewTip\" />
     <Folder Include="public\app\patientsData\view\" />
+    <Folder Include="public\app\patientsView\Game\" />
+    <Folder Include="public\app\patientsView\View\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -120,7 +129,7 @@
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\routes\index.server.routes.js" />
     <Compile Include="app\routes\patientsData.server.routes.js" />
-    <Compile Include="app\routes\patients.server.routes.js" />
+    <Compile Include="app\routes\patientsView.server.routes.js" />
     <Compile Include="app\routes\users.server.routes.js" />
     <Compile Include="config\config.js" />
     <Compile Include="config\env\development.js" />

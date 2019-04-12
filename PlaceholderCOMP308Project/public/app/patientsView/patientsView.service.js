@@ -9,7 +9,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var Observable_1, core_1, http_1, PatientsDataService;
+    var Observable_1, core_1, http_1, PatientsViewService;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -26,50 +26,28 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
             }
         ],
         execute: function () {
-            PatientsDataService = /** @class */ (function () {
-                function PatientsDataService(_http) {
+            PatientsViewService = /** @class */ (function () {
+                function PatientsViewService(_http) {
                     this._http = _http;
-                    this._baseURL = 'api/patientsData';
+                    this._baseURL = 'api/patientsView';
                 }
-                PatientsDataService.prototype.create = function (patientData) {
-                    return this._http
-                        .post(this._baseURL, patientData)
-                        .map(function (res) { return res.json(); })
-                        .catch(this.handleError);
-                };
-                PatientsDataService.prototype.read = function (patientDataId) {
+                PatientsViewService.prototype.read = function (patientDataId) {
                     return this._http
                         .get(this._baseURL + "/" + patientDataId)
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
-                PatientsDataService.prototype.update = function (patientData) {
-                    return this._http
-                        .put(this._baseURL + "/" + patientData._id, patientData).map(function (res) { return res.json(); })
-                        .catch(this.handleError);
-                };
-                PatientsDataService.prototype.updateTip = function (patientData) {
-                    return this._http
-                        .put(this._baseURL + "/" + patientData._id + "/editTip", patientData).map(function (res) { return res.json(); })
-                        .catch(this.handleError);
-                };
-                PatientsDataService.prototype.list = function () {
-                    return this._http
-                        .get(this._baseURL)
-                        .map(function (res) { return res.json(); })
-                        .catch(this.handleError);
-                };
-                PatientsDataService.prototype.handleError = function (error) {
+                PatientsViewService.prototype.handleError = function (error) {
                     return Observable_1.Observable.throw(error.json().message || 'Server error');
                 };
-                PatientsDataService = __decorate([
+                PatientsViewService = __decorate([
                     core_1.Injectable(),
                     __metadata("design:paramtypes", [http_1.Http])
-                ], PatientsDataService);
-                return PatientsDataService;
+                ], PatientsViewService);
+                return PatientsViewService;
             }());
-            exports_1("PatientsDataService", PatientsDataService);
+            exports_1("PatientsViewService", PatientsViewService);
         }
     };
 });
-//# sourceMappingURL=patientsData.service.js.map
+//# sourceMappingURL=patientsView.service.js.map
