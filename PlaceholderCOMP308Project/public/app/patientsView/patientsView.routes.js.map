@@ -1,1 +1,0 @@
-{"version":3,"file":"patientsView.routes.js","sourceRoot":"","sources":["patientsView.routes.ts"],"names":[],"mappings":";;;;;;;;;;;;;;YAGA,gCAAa,kBAAkB,GAAW,CAAC;oBACvC,IAAI,EAAE,cAAc;oBACpB,SAAS,EAAE,8CAAqB;oBAChC,QAAQ,EAAE;wBACN,EAAE,IAAI,EAAE,gBAAgB,EAAE,SAAS,EAAE,8BAAa,EAAE;qBACvD;iBACJ,CAAC,EAAC;QAAA,CAAC"}
