@@ -50,7 +50,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                 };
                 PatientsDataService.prototype.updateTip = function (patientData) {
                     return this._http
-                        .put(this._baseURL + "/" + patientData._id, patientData).map(function (res) { return res.json(); })
+                        .put(this._baseURL + "/" + patientData._id + "/editTip", patientData).map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
                 PatientsDataService.prototype.delete = function (patientDataId) {

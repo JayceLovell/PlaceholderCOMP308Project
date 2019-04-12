@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PatientsDataService } from '../../patientsData.service';
+import { PatientsDataService } from '../patientsData.service';
 @Component({
-    selector: 'edit',
-    templateUrl: 'app/patientsData/tip/edit/edit.template.html'
+    selector: 'editTip',
+    templateUrl: 'app/patientsData/editTip/edit.template.html'
 })
 export class EditTipComponent {
     patientData: any = {};
@@ -25,8 +25,7 @@ export class EditTipComponent {
         this.paramsObserver.unsubscribe();
     }
     update() {
-        this._PatientsDataService.update(this.patientData).subscribe(savedPatientData => this._router.navigate(['/patientsData', savedPatientData._id]),
-            error => this.errorMessage =
-                error);
+        this._PatientsDataService.updateTip(this.patientData).subscribe(savedPatientData => this._router.navigate(['/patientsData', savedPatientData._id,'/editTip']),
+            error => this.errorMessage = error);
     }
 }

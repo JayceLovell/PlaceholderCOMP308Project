@@ -23,13 +23,7 @@ export class PatientsDataService {
             .catch(this.handleError);
     } updateTip(patientData: any): Observable<any> {
         return this._http
-            .put(`${this._baseURL}/${patientData._id}`, patientData).map((res: Response) => res.json())
-            .catch(this.handleError);
-    }
-    delete(patientDataId: any): Observable<any> {
-        return this._http
-            .delete(`${this._baseURL}/${patientDataId}`)
-            .map((res: Response) => res.json())
+            .put(`${this._baseURL}/${patientData._id}/editTip`, patientData,).map((res: Response) => res.json())
             .catch(this.handleError);
     }
     list(): Observable<any> {

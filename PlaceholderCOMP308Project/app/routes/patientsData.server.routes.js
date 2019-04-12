@@ -11,20 +11,8 @@ module.exports = function (app) {
             update)
         .delete(users.requiresLogin, patientsData.hasAuthorization, patientsData.
             delete);
-    app.route('/api/patientsData/tip:patientDataId')
+    app.route('/api/patientsData/:patientDataId/editTip')
         .get(patientsData.read)
-        .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.updateTip)
-        .delete(users.requiresLogin, patientsData.hasAuthorization, patientsData.
-            delete);
-    app.route('/api/patientsData/tip/:patientDataId')
-        .get(patientsData.read)
-        .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.updateTip)
-        .delete(users.requiresLogin, patientsData.hasAuthorization, patientsData.
-            delete);
-    app.route('/api/patientsData/:patientDataId')
-        .get(patientsData.read)
-        .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.updateTip)
-        .delete(users.requiresLogin, patientsData.hasAuthorization, patientsData.
-            delete);
+        .put(users.requiresLogin, patientsData.hasAuthorization, patientsData.updateTip);
     app.param('patientDataId', patientsData.patientDataByID);
 };

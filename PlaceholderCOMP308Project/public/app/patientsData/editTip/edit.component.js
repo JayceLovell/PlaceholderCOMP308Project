@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/router", "../../patientsData.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "../patientsData.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -45,13 +45,12 @@ System.register(["@angular/core", "@angular/router", "../../patientsData.service
                 };
                 EditTipComponent.prototype.update = function () {
                     var _this = this;
-                    this._PatientsDataService.update(this.patientData).subscribe(function (savedPatientData) { return _this._router.navigate(['/patientsData', savedPatientData._id]); }, function (error) { return _this.errorMessage =
-                        error; });
+                    this._PatientsDataService.updateTip(this.patientData).subscribe(function (savedPatientData) { return _this._router.navigate(['/patientsData', savedPatientData._id, '/editTip']); }, function (error) { return _this.errorMessage = error; });
                 };
                 EditTipComponent = __decorate([
                     core_1.Component({
-                        selector: 'edit',
-                        templateUrl: 'app/patientsData/tip/edit/edit.template.html'
+                        selector: 'editTip',
+                        templateUrl: 'app/patientsData/editTip/edit.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
                         router_1.ActivatedRoute,

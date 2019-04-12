@@ -1,12 +1,12 @@
 <section *ngIf="patientData">
     <h1>{{patientData.patientFirstname}} {{patientData.patientLastname}}</h1>
     <h2>Previous Message</h2>
-    <p>{{patientDate.tip}}</p>
+    <p>{{patientData.tip}}</p>
     <h2>Date message Sent</h2>
-    <p>{{patientDate.dateOfTip}}</p>
+    <p>{{patientData.dateOfTip}}</p>
     <p></p>
     <div>
-        <a class="btn btn-warning" [routerLink]="['/patientsData/tip', patientData._id, 'edit']">Send a new tip</a>
+        <a class="btn btn-warning" [routerLink]="['/patientsData', patientData._id, 'editTip']">Send a new tip</a>
     </div>
 </section>
 <section *ngIf="!patientData">

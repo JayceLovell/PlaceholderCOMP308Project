@@ -4,7 +4,7 @@
         <h2>Patient: {{patientData.patientFirstname}} {{patientData.patientLastname}} </h2>
         <div class="btn-group-lg" role="group" aria-label="I don't know">
             <a class="btn btn-secondary" [routerLink]="['/patientsData', patientData._id]">Patients Data</a>
-            <a class="btn btn-secondary" [routerLink]="['/patientsData/tip', patientData._id]">Send Tip to Patient</a>
+            <a class="btn btn-secondary" [routerLink]="['/patientsData', patientData._id, 'viewTip']">Send Tip to Patient</a>
         </div>
         <br>
     </li>

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from '../../../authentication/authentication.service';
-import { PatientsDataService } from '../../patientsData.service';
+import { AuthenticationService } from '../../authentication/authentication.service';
+import { PatientsDataService } from '../patientsData.service';
 @Component({
     selector: 'view',
-    templateUrl: 'app/patientsData/tip/view/view.template.html'
+    templateUrl: 'app/patientsData/viewTip/view.template.html'
 })
 export class ViewTipComponent {
     user: any;
@@ -36,11 +36,5 @@ export class ViewTipComponent {
     //
     ngOnDestroy() {
         this.paramsObserver.unsubscribe();
-    }
-    //
-    delete() {
-        this._patientsDataService.delete(this.patientData._id).
-            subscribe(deletedPatientData => this._router.navigate(['/patientsData']),
-                error => this.errorMessage = error);
     }
 }

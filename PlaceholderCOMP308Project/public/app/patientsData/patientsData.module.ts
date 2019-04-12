@@ -6,9 +6,9 @@ import { PatientsDataRoutes } from './patientsData.routes';
 import { PatientsDataComponent } from './patientsData.component';
 import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';
-import { ViewTipComponent } from '../patientsData/tip/view/view.component';
 import { EditComponent } from './edit/edit.component';
-import { EditTipComponent } from '../patientsData/tip/edit/edit.component';
+import { EditTipComponent } from './editTip/edit.component';
+import { ViewTipComponent } from './viewTip/view.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -19,8 +19,8 @@ import { EditTipComponent } from '../patientsData/tip/edit/edit.component';
         PatientsDataComponent,
         ListComponent,
         ViewComponent,
-        ViewTipComponent,
         EditComponent,
+        ViewTipComponent,
         EditTipComponent
     ]
 })

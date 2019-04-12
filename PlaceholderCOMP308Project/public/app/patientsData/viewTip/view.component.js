@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/router", "../../../authentication/authentication.service", "../../patientsData.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "../../authentication/authentication.service", "../patientsData.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -54,16 +54,10 @@ System.register(["@angular/core", "@angular/router", "../../../authentication/au
                 ViewTipComponent.prototype.ngOnDestroy = function () {
                     this.paramsObserver.unsubscribe();
                 };
-                //
-                ViewTipComponent.prototype.delete = function () {
-                    var _this = this;
-                    this._patientsDataService.delete(this.patientData._id).
-                        subscribe(function (deletedPatientData) { return _this._router.navigate(['/patientsData']); }, function (error) { return _this.errorMessage = error; });
-                };
                 ViewTipComponent = __decorate([
                     core_1.Component({
                         selector: 'view',
-                        templateUrl: 'app/patientsData/tip/view/view.template.html'
+                        templateUrl: 'app/patientsData/viewTip/view.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
                         router_1.ActivatedRoute,
