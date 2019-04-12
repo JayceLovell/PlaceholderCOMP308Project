@@ -5,6 +5,6 @@ export const PatientsViewRoutes: Routes = [{
     path: 'patientsView',
     component: PatientsViewComponent,
     children: [
-        { path: ':patientDataId', component: ViewComponent },
+        { path: '', component: ViewComponent },
     ],
 }];
