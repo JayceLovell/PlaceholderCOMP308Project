@@ -40,6 +40,8 @@
     <Content Include="public\app\authentication\signin\signin.template.html" />
     <Content Include="public\app\authentication\signup\signup.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patientsList\list\list.template.html" />
+    <Content Include="public\app\patientsList\patientsList.module.ts" />
     <Content Include="public\app\patientsData\edit\edit.template.html" />
     <Content Include="public\app\patientsData\list\list.template.html" />
     <Content Include="public\app\patientsData\editTip\edit.template.html" />
@@ -64,6 +66,10 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientsList\list\list.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsList\patientsList.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsList\patientsList.service.ts" />
+    <TypeScriptCompile Include="public\app\patientsList\patientsList.route.ts" />
     <TypeScriptCompile Include="public\app\patientsData\edit\edit.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\list\list.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.component.ts" />
@@ -103,7 +109,8 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
-    <Folder Include="public\app\patientList\" />
+    <Folder Include="public\app\patientsList\" />
+    <Folder Include="public\app\patientsList\list\" />
     <Folder Include="public\app\patientsView\" />
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
@@ -133,7 +140,9 @@
     <Compile Include="app\models\patientDaily.server.model.js" />
     <Compile Include="app\models\user.server.model.js" />
     <Compile Include="app\routes\index.server.routes.js" />
+    <Compile Include="app\routes\patientsDaily.server.routes.js" />
     <Compile Include="app\routes\patientsData.server.routes.js" />
+    <Compile Include="app\routes\patientsSymptom.server.model.js" />
     <Compile Include="app\routes\users.server.routes.js" />
     <Compile Include="config\config.js" />
     <Compile Include="config\env\development.js" />
