@@ -40,6 +40,8 @@
     <Content Include="public\app\authentication\signin\signin.template.html" />
     <Content Include="public\app\authentication\signup\signup.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\patientsDaily\create\create.template.html" />
+    <Content Include="public\app\patientsDaily\view\view.template.html" />
     <Content Include="public\app\patientsSymptom\create\create.template.html" />
     <Content Include="public\app\patientsList\list\list.template.html" />
     <Content Include="public\app\patientsList\patientsList.module.ts" />
@@ -66,6 +68,12 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\create\create.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.module.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.routes.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.service.ts" />
+    <TypeScriptCompile Include="public\app\patientsDaily\view\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsSymptom\create\create.component.ts" />
     <TypeScriptCompile Include="public\app\patientsSymptom\patientsSymptom.component.ts" />
     <TypeScriptCompile Include="public\app\patientsList\list\list.component.ts" />
@@ -113,6 +121,10 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\patientsDaily\" />
+    <Folder Include="public\app\patientsDaily\create\" />
+    <Folder Include="public\app\patientsDaily\edit\" />
+    <Folder Include="public\app\patientsDaily\view\" />
     <Folder Include="public\app\patientsSymptom\" />
     <Folder Include="public\app\patientsSymptom\create\" />
     <Folder Include="public\app\patientsList\" />
