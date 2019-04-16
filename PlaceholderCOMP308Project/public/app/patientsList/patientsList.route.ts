@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { PatientsListComponent } from './patientsList.service';
+import { PatientsListComponent } from './patientsList.component';
 import { ListComponent } from './list/list.component';
-export const PatientsList: Routes = [{
+export const PatientsListRoutes: Routes = [{
     path: 'patientsList',
     component: PatientsListComponent,
     children: [
-        {path: '', component: ListComponent }]
+        { path: '', component: ListComponent }
+    ],
 }];

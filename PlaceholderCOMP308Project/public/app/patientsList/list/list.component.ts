@@ -9,7 +9,6 @@ export class ListComponent {
     errorMessage: string;
     constructor(private _patientsListService: PatientsListService) { }
     ngOnInit() {
-        this._patientsListService.list().subscribe(patientsList => this.patientsList
-            = patientsList);
+        this._patientsListService.list().subscribe(patientsList => this.patientsList = patientsList);
     }
 }

@@ -16,7 +16,7 @@ System.register(["./patientsView.component", "./View/view.component"], function 
                     path: 'patientsView',
                     component: patientsView_component_1.PatientsViewComponent,
                     children: [
-                        { path: ':patientDataId', component: view_component_1.ViewComponent },
+                        { path: '', component: view_component_1.ViewComponent },
                     ],
                 }]);
         }

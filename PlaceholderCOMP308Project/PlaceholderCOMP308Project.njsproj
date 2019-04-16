@@ -44,8 +44,6 @@
     <Content Include="public\app\patientsList\patientsList.module.ts" />
     <Content Include="public\app\patientsData\edit\edit.template.html" />
     <Content Include="public\app\patientsData\list\list.template.html" />
-    <Content Include="public\app\patientsData\editTip\edit.template.html" />
-    <Content Include="public\app\patientsData\viewTip\view.template.html" />
     <Content Include="public\app\patientsData\view\view.template.html" />
     <Content Include="public\app\patientsView\View\view.template.html" />
     <Content Include="typings.json" />
@@ -76,8 +74,6 @@
     <TypeScriptCompile Include="public\app\patientsData\patientsData.module.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.service.ts" />
-    <TypeScriptCompile Include="public\app\patientsData\editTip\edit.component.ts" />
-    <TypeScriptCompile Include="public\app\patientsData\viewTip\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsData\view\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.component.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.module.ts" />
@@ -115,8 +111,6 @@
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
     <Folder Include="public\app\patientsData\edit\" />
-    <Folder Include="public\app\patientsData\editTip\" />
-    <Folder Include="public\app\patientsData\viewTip\" />
     <Folder Include="public\app\patientsData\view\" />
     <Folder Include="public\app\patientsView\Game\" />
     <Folder Include="public\app\patientsView\View\" />
