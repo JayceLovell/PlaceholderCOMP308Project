@@ -10,7 +10,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { PatientsDataModule } from './patientsData/patientsData.module';
 import { PatientsViewModule } from './patientsView/patientsView.module';
 import { PatientsListModule } from './patientsList/patientsList.module';
-import { SymptomModule } from './symptoms/symptoms.module';
+import { PatientsSymptomModule } from './patientsSymptom/patientsSymptom.module';
 @NgModule({
     imports: [
         BrowserModule,
@@ -20,7 +20,7 @@ import { SymptomModule } from './symptoms/symptoms.module';
         PatientsDataModule,
         PatientsViewModule,
         PatientsListModule,
-        SymptomModule,
+        PatientsSymptomModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [

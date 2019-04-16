@@ -1,0 +1,38 @@
+<h1>Symptoms Checklist</h1>
+<form (ngSubmit)="create()" novalidate>
+    <div>
+        <div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.headache" class="form-check-input" id="headache" value="headache" />
+                <label class="form-check-label" for="headache">Headache</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.dizziness" class="form-check-input" id="dizziness" value="dizziness" />
+                <label class="form-check-label" for="dizziness">Dizziness</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.fever" class="form-check-input" id="fever" value="fever">
+                <label class="form-check-label" for="fever">Fever</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.stomachPains" class="form-check-input" id="stomachPains" value="stomachPains" />
+                <label class="form-check-label" for="stomachPains">Stomach Pains</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.coughing" class="form-check-input" id="coughing" value="coughing" />
+                <label class="form-check-label" for="coughing">Coughing</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.runnyNose" class="form-check-input" id="runnyNose" value="runnyNose" />
+                <label class="form-check-label" for="runnyNose">Running Nose</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientsSymptom.jointPain" class="form-check-input" id="jointPain" value="jointPain" />
+                <label class="form-check-label" for="jointPain">Joint Pain</label>
+            </div>
+
+            <input class="btn btn-warning" type="submit" value="Submit">
+        </div>
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>

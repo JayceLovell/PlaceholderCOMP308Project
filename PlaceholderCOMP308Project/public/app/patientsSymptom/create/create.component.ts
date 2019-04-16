@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SymptomsService } from '../symptoms.service';
+import { PatientsSymptomService } from '../patientsSymptom.service';
 @Component({
     selector: 'create',
-    templateUrl: 'app/symptoms/create/create.template.html'
+    templateUrl: 'app/patientsSymptom/create/create.template.html'
 })
 export class CreateComponent {
-    symptom: any = {};
+    patientSymptom: any = {};
     errorMessage: string;
     constructor(private _router: Router,
-        private _symptomsService: SymptomsService) { }
+        private _patientsSymptomService: PatientsSymptomService) { }
     create() {
-        this._symptomsService
-            .create(this.symptom)
+        this._patientsSymptomService
+            .create(this.patientSymptom)
             .subscribe(createdsymptom => this._router.navigate(['/']),
                 error => this.errorMessage = error);
     }

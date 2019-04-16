@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/router", "../symptoms.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "../patientsSymptom.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,7 +9,7 @@ System.register(["@angular/core", "@angular/router", "../symptoms.service"], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, symptoms_service_1, CreateComponent;
+    var core_1, router_1, patientsSymptom_service_1, CreateComponent;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -19,30 +19,30 @@ System.register(["@angular/core", "@angular/router", "../symptoms.service"], fun
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (symptoms_service_1_1) {
-                symptoms_service_1 = symptoms_service_1_1;
+            function (patientsSymptom_service_1_1) {
+                patientsSymptom_service_1 = patientsSymptom_service_1_1;
             }
         ],
         execute: function () {
             CreateComponent = /** @class */ (function () {
-                function CreateComponent(_router, _symptomsService) {
+                function CreateComponent(_router, _patientsSymptomService) {
                     this._router = _router;
-                    this._symptomsService = _symptomsService;
-                    this.symptom = {};
+                    this._patientsSymptomService = _patientsSymptomService;
+                    this.patientSymptom = {};
                 }
                 CreateComponent.prototype.create = function () {
                     var _this = this;
-                    this._symptomsService
-                        .create(this.symptom)
+                    this._patientsSymptomService
+                        .create(this.patientSymptom)
                         .subscribe(function (createdsymptom) { return _this._router.navigate(['/']); }, function (error) { return _this.errorMessage = error; });
                 };
                 CreateComponent = __decorate([
                     core_1.Component({
                         selector: 'create',
-                        templateUrl: 'app/symptoms/create/create.template.html'
+                        templateUrl: 'app/patientsSymptom/create/create.template.html'
                     }),
                     __metadata("design:paramtypes", [router_1.Router,
-                        symptoms_service_1.SymptomsService])
+                        patientsSymptom_service_1.PatientsSymptomService])
                 ], CreateComponent);
                 return CreateComponent;
             }());
