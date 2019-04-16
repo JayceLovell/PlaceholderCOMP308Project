@@ -4,6 +4,8 @@ const passport = require('passport');
 
 // Define the routes module' method
 module.exports = function (app) {
+    //list all patients
+    app.route('/api/patientsList').get(users.list).post(users.list);
     // Set up the 'signup' routes 
     app.route('/api/auth/signup').post(users.signup);
 

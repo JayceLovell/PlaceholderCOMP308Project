@@ -141,6 +141,7 @@ exports.list = function (req, res) {
     var query = { isPatient: true };
     User.find(query).exec((err, patients) => {
         if (err) {
+            console.log("Error");
             return res.status(400).send({
                 message: getErrorMessage(err)
             });

@@ -47,7 +47,7 @@ System.register(["@angular/core", "@angular/router", "../../authentication/authe
                             .subscribe(function (patientData) {
                             _this.patientData = patientData;
                             _this.allowEdit = true;
-                        }, function (error) { return _this._router.navigate(['/patientsView']); });
+                        }, function (error) { return _this._router.navigate(['/patientsView/' + patientDataId]); });
                     });
                 };
                 //

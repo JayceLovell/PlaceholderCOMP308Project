@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const PatientSymptom = mongoose.model('PatientSymptom');
+const PatientDaily = mongoose.model('PatientDaily');
 
 function getErrorMessage(err) {
     if (err.errors) {
@@ -13,16 +13,16 @@ function getErrorMessage(err) {
 };
 
 exports.create = function (req, res) {
-    const patientSymptom = new PatientSymptom(req.body);
-    patientSymptom.patientId = req.user;
-    patientSymptom.save((err) => {
+    const patientDaily = new PatientDaily(req.body);
+    patientDaily.patientId = req.user;
+    patientDaily.save((err) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         }
         else {
-            res.status(200).json(patientSymptom);
+            res.status(200).json(patientDaily);
         }
     });
 };

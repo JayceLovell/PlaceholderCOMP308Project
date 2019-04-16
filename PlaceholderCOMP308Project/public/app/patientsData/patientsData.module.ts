@@ -7,8 +7,6 @@ import { PatientsDataComponent } from './patientsData.component';
 import { ListComponent } from './list/list.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
-import { EditTipComponent } from './editTip/edit.component';
-import { ViewTipComponent } from './viewTip/view.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -20,8 +18,6 @@ import { ViewTipComponent } from './viewTip/view.component';
         ListComponent,
         ViewComponent,
         EditComponent,
-        ViewTipComponent,
-        EditTipComponent
     ]
 })
 export class PatientsDataModule { }
