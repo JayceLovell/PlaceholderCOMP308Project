@@ -40,6 +40,7 @@
     <Content Include="public\app\authentication\signin\signin.template.html" />
     <Content Include="public\app\authentication\signup\signup.template.html" />
     <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\symptoms\create\create.template.html" />
     <Content Include="public\app\patientsList\list\list.template.html" />
     <Content Include="public\app\patientsList\patientsList.module.ts" />
     <Content Include="public\app\patientsData\edit\edit.template.html" />
@@ -64,6 +65,8 @@
     <TypeScriptCompile Include="public\app\home\home.component.ts" />
     <TypeScriptCompile Include="public\app\home\home.module.ts" />
     <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\symptoms\create\create.component.ts" />
+    <TypeScriptCompile Include="public\app\symptoms\symptoms.component.ts" />
     <TypeScriptCompile Include="public\app\patientsList\list\list.component.ts" />
     <TypeScriptCompile Include="public\app\patientsList\patientsList.component.ts" />
     <TypeScriptCompile Include="public\app\patientsList\patientsList.service.ts" />
@@ -80,6 +83,9 @@
     <TypeScriptCompile Include="public\app\patientsView\patientsView.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.service.ts" />
     <TypeScriptCompile Include="public\app\patientsView\View\view.component.ts" />
+    <TypeScriptCompile Include="public\app\symptoms\symptoms.module.ts" />
+    <TypeScriptCompile Include="public\app\symptoms\symptoms.routes.ts" />
+    <TypeScriptCompile Include="public\app\symptoms\symptoms.service.ts" />
     <TypeScriptCompile Include="server.js" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
@@ -105,6 +111,8 @@
     <Folder Include="public\app\authentication\signup\" />
     <Folder Include="public\app\authentication\signin\" />
     <Folder Include="public\app\home\" />
+    <Folder Include="public\app\symptoms\" />
+    <Folder Include="public\app\symptoms\create\" />
     <Folder Include="public\app\patientsList\" />
     <Folder Include="public\app\patientsList\list\" />
     <Folder Include="public\app\patientsView\" />
@@ -112,7 +120,6 @@
     <Folder Include="public\app\patientsData\list\" />
     <Folder Include="public\app\patientsData\edit\" />
     <Folder Include="public\app\patientsData\view\" />
-    <Folder Include="public\app\patientsView\Game\" />
     <Folder Include="public\app\patientsView\View\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />

@@ -1,0 +1,18 @@
+<h1>Symptoms Checklist</h1>
+<form (ngSubmit)="create()" novalidate>
+    <div>
+        <label for="title">Symptoms</label>
+        <div>
+            <input type="checkbox" name="symptom" value="Fever">Fever<br>
+            <input type="checkbox" name="symptom" value="headAches"> HeadAches<br>
+            <input type="checkbox" name="symptom" value="dizziness"> dizziness<br>
+            <input type="checkbox" name="symptom" value="stomachPains"> stomachPains<br>
+            <input type="checkbox" name="symptom" value="coughing"> coughing<br>
+            <input type="checkbox" name="symptom" value="runnyNose"> runnyNose<br>
+            <input type="checkbox" name="symptom" value="jointPain"> jointPain<br>
+
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>
