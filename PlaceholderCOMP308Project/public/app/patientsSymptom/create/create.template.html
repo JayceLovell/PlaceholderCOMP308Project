@@ -1,0 +1,36 @@
+<h1>Symptoms Checklist</h1>
+<form (ngSubmit)="create()" novalidate>
+    <div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.headache" class="form-check-input" name="headache" />
+                <label class="form-check-label" for="headache">Headache</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.dizziness" class="form-check-input" name="dizziness" />
+                <label class="form-check-label" for="dizziness">Dizziness</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.fever" class="form-check-input" name="fever">
+                <label class="form-check-label" for="fever">Fever</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.stomachPains" class="form-check-input" name="stomachPains" />
+                <label class="form-check-label" for="stomachPains">Stomach Pains</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.coughing" class="form-check-input" name="coughing" />
+                <label class="form-check-label" for="coughing">Coughing</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.runnyNose" class="form-check-input" name="runnyNose" />
+                <label class="form-check-label" for="runnyNose">Running Nose</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="patientSymptom.jointPain" class="form-check-input" name="jointPain" />
+                <label class="form-check-label" for="jointPain">Joint Pain</label>
+            </div>
+
+            <input class="btn btn-warning" type="submit">
+    </div>
+    <strong name="error">{{errorMessage}}</strong>
+</form>

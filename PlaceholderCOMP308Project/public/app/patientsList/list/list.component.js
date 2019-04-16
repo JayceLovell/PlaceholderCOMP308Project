@@ -27,7 +27,6 @@ System.register(["@angular/core", "../patientsList.service"], function (exports_
                 }
                 ListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    console.log("OnInit for list components");
                     this._patientsListService.list().subscribe(function (patientsList) { return _this.patientsList = patientsList; });
                 };
                 ListComponent = __decorate([

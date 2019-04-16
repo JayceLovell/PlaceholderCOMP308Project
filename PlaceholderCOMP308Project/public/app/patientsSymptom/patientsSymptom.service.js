@@ -9,7 +9,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var Observable_1, core_1, http_1, PatientsListService;
+    var Observable_1, core_1, http_1, PatientsSymptomService;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -26,28 +26,34 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
             }
         ],
         execute: function () {
-            PatientsListService = /** @class */ (function () {
-                function PatientsListService(_http) {
+            PatientsSymptomService = /** @class */ (function () {
+                function PatientsSymptomService(_http) {
                     this._http = _http;
-                    this._baseURL = 'api/patientsList';
+                    this._baseURL = 'api/patientsSymptom';
                 }
-                PatientsListService.prototype.list = function () {
+                PatientsSymptomService.prototype.read = function (patientSymptomId) {
                     return this._http
-                        .get(this._baseURL)
+                        .get(this._baseURL + "/" + patientSymptomId)
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
-                PatientsListService.prototype.handleError = function (error) {
+                PatientsSymptomService.prototype.create = function (symptom) {
+                    return this._http
+                        .post(this._baseURL, symptom)
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
+                PatientsSymptomService.prototype.handleError = function (error) {
                     return Observable_1.Observable.throw(error.json().message || 'Server error');
                 };
-                PatientsListService = __decorate([
+                PatientsSymptomService = __decorate([
                     core_1.Injectable(),
                     __metadata("design:paramtypes", [http_1.Http])
-                ], PatientsListService);
-                return PatientsListService;
+                ], PatientsSymptomService);
+                return PatientsSymptomService;
             }());
-            exports_1("PatientsListService", PatientsListService);
+            exports_1("PatientsSymptomService", PatientsSymptomService);
         }
     };
 });
-//# sourceMappingURL=patientsList.service.js.map
+//# sourceMappingURL=patientsSymptom.service.js.map

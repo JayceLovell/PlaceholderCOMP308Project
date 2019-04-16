@@ -26,6 +26,19 @@ exports.create = function (req, res) {
         }
     });
 };
+exports.patientSymptomByID = function (req, res, next, id) {
+    PatientSymptom.findById(id).populate('patientId', 'firstName lastName fullName').exec((err, patientSymptom) => {
+        if (err) return next(err);
+        if (!patientSymptom) return next(new Error('Failed to load patientSymptom '
+            + id));
+        req.patientSymptom = patientSymptom;
+        next();
+    });
+};
+//
+exports.read = function (req, res) {
+    res.status(200).json(req.patientSymptom);
+};
 exports.hasAuthorization = function (req, res, next) {
     if (req.user.isPatient === false) {
         return res.status(403).send({
