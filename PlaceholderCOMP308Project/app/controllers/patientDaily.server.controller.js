@@ -14,7 +14,6 @@ function getErrorMessage(err) {
 
 exports.create = function (req, res) {
     const patientDaily = new PatientDaily(req.body);
-    patientDaily.patientId = req.user;
     patientDaily.save((err) => {
         if (err) {
             return res.status(400).send({

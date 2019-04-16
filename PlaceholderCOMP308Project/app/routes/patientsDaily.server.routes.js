@@ -6,5 +6,6 @@ module.exports = function (app) {
         .post(users.requiresLogin, patientsDaily.hasAuthorization, patientsDaily.create);
     app.route('/api/patientsDaily/:patientDailyId')
         .get(patientsDaily.read)
+        .post(users.requiresLogin, patientsDaily.hasAuthorization, patientsDaily.create);
     app.param('patientDailyId', patientsDaily.patientDailyByID);
 };

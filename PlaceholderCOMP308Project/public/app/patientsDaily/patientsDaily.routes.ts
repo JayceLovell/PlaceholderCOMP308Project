@@ -7,7 +7,7 @@ export const PatientsDailyRoutes: Routes = [{
     path: 'patientsDaily',
     component: PatientsDailyComponent,
     children: [
-        { path: 'create', component: CreateComponent },
+        { path: ':patientDailyId/create', component: CreateComponent },
         { path: ':patientDailyId', component: ViewComponent },
         //{ path: ':patientDailyId/edit', component: EditComponent }
     ],

@@ -1,9 +1,13 @@
 <h1>Send Patient Tip</h1>
 <form (ngSubmit)="create()" novalidate>
     <div class="form-group">
-        <label for="tip">Tip for patient</label>
-        <textarea class="form-control" rows="5" [(ngModel)]="patientDaily.tip" name="tip"></textarea>
+        <label class="form-label" for="tip">Tip for patient</label>
+        <textarea [(ngModel)]="patientDaily.tip" class="form-control" rows="5" name="tip"></textarea>
     </div>
     <input class="btn btn-success" type="submit" />
-    <strong name="error">{{errorMessage}}</strong>
+    <div>
+        <strong name="error" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+        </strong>
+    </div>
 </form>

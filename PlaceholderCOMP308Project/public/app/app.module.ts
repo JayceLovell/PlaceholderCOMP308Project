@@ -11,6 +11,7 @@ import { PatientsDataModule } from './patientsData/patientsData.module';
 import { PatientsViewModule } from './patientsView/patientsView.module';
 import { PatientsListModule } from './patientsList/patientsList.module';
 import { PatientsSymptomModule } from './patientsSymptom/patientsSymptom.module';
+import { PatientsDailyModule } from './patientsDaily/patientsDaily.module';
 @NgModule({
     imports: [
         BrowserModule,
@@ -21,6 +22,7 @@ import { PatientsSymptomModule } from './patientsSymptom/patientsSymptom.module'
         PatientsViewModule,
         PatientsListModule,
         PatientsSymptomModule,
+        PatientsDailyModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [
