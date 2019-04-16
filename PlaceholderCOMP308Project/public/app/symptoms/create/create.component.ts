@@ -13,7 +13,7 @@ export class CreateComponent {
     create() {
         this._symptomsService
             .create(this.symptom)
-            .subscribe(createdsymptom => this._router.navigate(['/',]),
+            .subscribe(createdsymptom => this._router.navigate(['/']),
                 error => this.errorMessage = error);
     }
 }

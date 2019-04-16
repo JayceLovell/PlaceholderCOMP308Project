@@ -9,7 +9,7 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var Observable_1, core_1, http_1, PatientsListService;
+    var Observable_1, core_1, http_1, SymptomsService;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -26,28 +26,28 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
             }
         ],
         execute: function () {
-            PatientsListService = /** @class */ (function () {
-                function PatientsListService(_http) {
+            SymptomsService = /** @class */ (function () {
+                function SymptomsService(_http) {
                     this._http = _http;
-                    this._baseURL = 'api/patientsList';
+                    this._baseURL = 'api/symptoms';
                 }
-                PatientsListService.prototype.list = function () {
+                SymptomsService.prototype.create = function (symptom) {
                     return this._http
-                        .get(this._baseURL)
+                        .post(this._baseURL, symptom)
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
-                PatientsListService.prototype.handleError = function (error) {
+                SymptomsService.prototype.handleError = function (error) {
                     return Observable_1.Observable.throw(error.json().message || 'Server error');
                 };
-                PatientsListService = __decorate([
+                SymptomsService = __decorate([
                     core_1.Injectable(),
                     __metadata("design:paramtypes", [http_1.Http])
-                ], PatientsListService);
-                return PatientsListService;
+                ], SymptomsService);
+                return SymptomsService;
             }());
-            exports_1("PatientsListService", PatientsListService);
+            exports_1("SymptomsService", SymptomsService);
         }
     };
 });
-//# sourceMappingURL=patientsList.service.js.map
+//# sourceMappingURL=Symptoms.service.js.map
