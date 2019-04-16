@@ -34,7 +34,8 @@ System.register(["@angular/core", "@angular/router", "../patientsSymptom.service
                     var _this = this;
                     this._patientsSymptomService
                         .create(this.patientSymptom)
-                        .subscribe(function (createdsymptom) { return _this._router.navigate(['/']); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (createdSymptom) { return _this._router.navigate(['/patientsSymptom', createdSymptom._id]); }, function (error) { return _this.errorMessage = error; });
+                    console.log(this.patientSymptom);
                 };
                 CreateComponent = __decorate([
                     core_1.Component({

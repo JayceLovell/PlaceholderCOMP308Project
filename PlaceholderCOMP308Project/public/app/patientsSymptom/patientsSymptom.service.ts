@@ -6,6 +6,12 @@ import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 export class PatientsSymptomService {
     private _baseURL = 'api/patientsSymptom';
     constructor(private _http: Http) { }
+    read(patientSymptomId: string): Observable<any> {
+        return this._http
+            .get(`${this._baseURL}/${patientSymptomId}`)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
     create(symptom: any): Observable<any> {
         return this._http
             .post(this._baseURL, symptom)

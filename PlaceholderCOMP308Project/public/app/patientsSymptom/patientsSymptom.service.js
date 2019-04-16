@@ -31,6 +31,12 @@ System.register(["rxjs/Rx", "rxjs/Observable", "@angular/core", "@angular/http"]
                     this._http = _http;
                     this._baseURL = 'api/patientsSymptom';
                 }
+                PatientsSymptomService.prototype.read = function (patientSymptomId) {
+                    return this._http
+                        .get(this._baseURL + "/" + patientSymptomId)
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
                 PatientsSymptomService.prototype.create = function (symptom) {
                     return this._http
                         .post(this._baseURL, symptom)

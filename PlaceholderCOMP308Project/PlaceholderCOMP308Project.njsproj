@@ -46,6 +46,7 @@
     <Content Include="public\app\patientsData\edit\edit.template.html" />
     <Content Include="public\app\patientsData\list\list.template.html" />
     <Content Include="public\app\patientsData\view\view.template.html" />
+    <Content Include="public\app\patientsSymptom\view\view.template.html" />
     <Content Include="public\app\patientsView\View\view.template.html" />
     <Content Include="typings.json" />
     <Content Include="typings\globals\core-js\typings.json" />
@@ -78,6 +79,7 @@
     <TypeScriptCompile Include="public\app\patientsData\patientsData.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsData\patientsData.service.ts" />
     <TypeScriptCompile Include="public\app\patientsData\view\view.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsSymptom\view\view.component.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.component.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.module.ts" />
     <TypeScriptCompile Include="public\app\patientsView\patientsView.routes.ts" />
@@ -115,6 +117,7 @@
     <Folder Include="public\app\patientsSymptom\create\" />
     <Folder Include="public\app\patientsList\" />
     <Folder Include="public\app\patientsList\list\" />
+    <Folder Include="public\app\patientsSymptom\view\" />
     <Folder Include="public\app\patientsView\" />
     <Folder Include="public\app\patientsData\" />
     <Folder Include="public\app\patientsData\list\" />
@@ -143,7 +146,7 @@
     <Compile Include="app\routes\index.server.routes.js" />
     <Compile Include="app\routes\patientsDaily.server.routes.js" />
     <Compile Include="app\routes\patientsData.server.routes.js" />
-    <Compile Include="app\routes\patientsSymptom.server.model.js" />
+    <Compile Include="app\routes\patientsSymptom.server.routes.js" />
     <Compile Include="app\routes\users.server.routes.js" />
     <Compile Include="config\config.js" />
     <Compile Include="config\env\development.js" />
