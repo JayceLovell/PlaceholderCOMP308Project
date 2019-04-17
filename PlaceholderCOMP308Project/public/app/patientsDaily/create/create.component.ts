@@ -20,8 +20,8 @@ export class CreateComponent {
     }
     create() {
         this._patientsDailyService.create(this.patientDaily)
-            .subscribe(createdPatientDaily => this._router.navigate(['/patientsDaily',createdPatientDaily._id]),
-                error => this.errorMessage = error+" Lets see whats the navigation: "+this._router.navigate);
+            .subscribe(createdPatientDaily => this._router.navigate(['patientsDaily', createdPatientDaily._id]),
+                error => this.errorMessage = "This never works, always get this error :"+error);
     }
     ngOnDestroy() {
         this.paramsObserver.unsubscribe();

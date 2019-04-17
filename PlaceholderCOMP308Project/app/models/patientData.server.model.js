@@ -7,15 +7,6 @@ const PatientDataSchema = new Schema({
         ref: 'User',
         required: true
     },
-    patientUsername: {
-        type: String
-    },
-    patientFirstname: {
-        type: String
-    },
-    patientLastname: {
-        type: String
-    },
     bodyTemperature: {
         type: String
     },
