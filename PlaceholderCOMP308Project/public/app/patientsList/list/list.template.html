@@ -1,8 +1,8 @@
 <h1>List of Patients</h1>
-<ul>
-    <li *ngFor="let patientList of patientsList">
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let patientList of patientsList">
         <h1>{{patientList.fullName}}</h1>
-        <a class="btn btn-primary" [routerLink]="['/patientsData/create', patientList._id]">Enter Data</a>
+        <a class="btn btn-primary" [routerLink]="['/patientsData', patientList._id,'create']">Enter Data</a>
         <a class="btn btn-info" [routerLink]="['/patientsDaily', patientList._id,'create']">Send Tip</a>
         <br>
     </li>

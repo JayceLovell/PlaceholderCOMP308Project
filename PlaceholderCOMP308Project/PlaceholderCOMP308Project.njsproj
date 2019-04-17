@@ -42,6 +42,7 @@
     <Content Include="public\app\home\home.template.html" />
     <Content Include="public\app\patientsDaily\create\create.template.html" />
     <Content Include="public\app\patientsDaily\view\view.template.html" />
+    <Content Include="public\app\patientsData\create\create.template.html" />
     <Content Include="public\app\patientsSymptom\create\create.template.html" />
     <Content Include="public\app\patientsList\list\list.template.html" />
     <Content Include="public\app\patientsList\patientsList.module.ts" />
@@ -74,6 +75,7 @@
     <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.routes.ts" />
     <TypeScriptCompile Include="public\app\patientsDaily\patientsDaily.service.ts" />
     <TypeScriptCompile Include="public\app\patientsDaily\view\view.component.ts" />
+    <TypeScriptCompile Include="public\app\patientsData\create\create.component.ts" />
     <TypeScriptCompile Include="public\app\patientsSymptom\create\create.component.ts" />
     <TypeScriptCompile Include="public\app\patientsSymptom\patientsSymptom.component.ts" />
     <TypeScriptCompile Include="public\app\patientsList\list\list.component.ts" />
@@ -125,6 +127,7 @@
     <Folder Include="public\app\patientsDaily\create\" />
     <Folder Include="public\app\patientsDaily\edit\" />
     <Folder Include="public\app\patientsDaily\view\" />
+    <Folder Include="public\app\patientsData\create\" />
     <Folder Include="public\app\patientsSymptom\" />
     <Folder Include="public\app\patientsSymptom\create\" />
     <Folder Include="public\app\patientsList\" />
